@@ -29,6 +29,8 @@ Things you may want to cover:
 
 * Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
 
-* Lindsay Barrett [@labarrett]
-
 * Nathan Digangi [@netn8](http://twitter.com/netn8)
+
+* Lindsay Barrett [@labarrett](https://github.com/labarrett)
+
+* Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis)
