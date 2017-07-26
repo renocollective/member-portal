@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Contributors
+
+* Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
