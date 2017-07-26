@@ -30,3 +30,5 @@ Things you may want to cover:
 * Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
 
 * Lindsay Barrett [@labarrett](https://github.com/labarrett)
+
+* Brenda Penn [@BrendaPenn](https://github.com/BrendaPenn)
