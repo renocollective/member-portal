@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#Contributors
+
+* Josh Fleming [@joshfleming](https://github.com/joshfleming)
