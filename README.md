@@ -28,3 +28,5 @@ Things you may want to cover:
 * Josh Fleming [@joshfleming](https://github.com/joshfleming)
 
 * Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
+
+* Lindsay Barrett [@labarrett]
