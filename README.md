@@ -31,4 +31,6 @@ Things you may want to cover:
 
 * Lindsay Barrett [@labarrett](https://github.com/labarrett)
 
-* Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis)
+* Brenda Penn [@BrendaPenn](https://github.com/BrendaPenn)
+
+* Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis
