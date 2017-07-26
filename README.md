@@ -26,3 +26,5 @@ Things you may want to cover:
 #Contributors
 
 * Josh Fleming [@joshfleming](https://github.com/joshfleming)
+
+* Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
