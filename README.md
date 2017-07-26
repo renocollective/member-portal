@@ -30,3 +30,5 @@ Things you may want to cover:
 * Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
 
 * Lindsay Barrett [@labarrett]
+
+* Nathan Digangi [@netn8](http://twitter.com/netn8)
