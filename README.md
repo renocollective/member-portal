@@ -29,6 +29,12 @@ Things you may want to cover:
 
 * Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
 
-* Lindsay Barrett [@labarrett]
-
 * Sue-Ting Chene
+
+* Nathan Digangi [@netn8](http://twitter.com/netn8)
+
+* Lindsay Barrett [@labarrett](https://github.com/labarrett)
+
+* Brenda Penn [@BrendaPenn](https://github.com/BrendaPenn)
+
+* Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis
