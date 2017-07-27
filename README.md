@@ -38,3 +38,5 @@ Things you may want to cover:
 * Brenda Penn [@BrendaPenn](https://github.com/BrendaPenn)
 
 * Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis
+
+* Veronica Cannon [@veronicacannon] (https://github.com/veronicacannon)
