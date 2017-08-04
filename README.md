@@ -23,6 +23,10 @@ Things you may want to cover:
 
 * ...
 
+#Docker
+* To run rails in docker
+* ```docker-compose up``` or ```docker-compose up -d``` to not show console output.
+
 #Contributors
 
 * Josh Fleming [@joshfleming](https://github.com/joshfleming)
@@ -39,4 +43,4 @@ Things you may want to cover:
 
 * Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis)
 
-* Veronica Cannon [@veronicacannon] (https://github.com/veronicacannon)
+* Veronica Cannon [@veronicacannon](https://github.com/veronicacannon)
