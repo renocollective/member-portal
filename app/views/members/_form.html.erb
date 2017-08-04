@@ -11,8 +11,20 @@
     </div>
   <% end %>
 
-<h3> username</h3>
+<h3>Username</h3>
   <%= form.text_field :username %>
+
+<h3>First Name</h3>
+  <%= form.text_field :firstname %>
+
+<h3>Last Name</h3>
+  <%= form.text_field :lastname %>
+
+<h3>Email</h3>
+    <%= form.text_field :email %>
+
+<h3>Bio</h3>
+  <%= form.text_area :bio %>
 
   <div class="actions">
     <%= form.submit %>

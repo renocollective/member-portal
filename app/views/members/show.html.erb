@@ -3,5 +3,18 @@
 <h3>Username</h3>
 <%= @member.username %>
 
+<h3>First Name</h3>
+<%= @member.firstname %>
+
+<h3>Last Name</h3>
+<%= @member.lastname %>
+
+<h3>Email</h3>
+  <%= @member.email %>
+
+<h3>Bio</h3>
+  <%= @member.bio %>
+
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
