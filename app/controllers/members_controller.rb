@@ -2,15 +2,16 @@
 
 # Membership controller
 class MembersController < ApplicationController
-  before_action :set_member, only: %i[show
-                                      edit
-                                      update
-                                      destroy]
+  before_action :set_member, only: %i[show edit update destroy]
 
   # GET /members
-  # GET /members.json
   def index
-    @members = Member.all
+    @members =
+      if search_query
+        Member.search_result(search_query)
+      else
+        Member.all
+      end
   end
 
   # GET /members/1
@@ -26,7 +27,6 @@ class MembersController < ApplicationController
   def edit() end
 
   # POST /members
-  # POST /members.json
   def create
     @member = Member.new(member_params)
 
@@ -40,7 +40,6 @@ class MembersController < ApplicationController
   end
 
   # PATCH/PUT /members/1
-  # PATCH/PUT /members/1.json
   def update
     respond_to do |format|
       if @member.update(member_params)
@@ -52,7 +51,6 @@ class MembersController < ApplicationController
   end
 
   # DELETE /members/1
-  # DELETE /members/1.json
   def destroy
     @member.destroy
     respond_to do |format|
@@ -60,17 +58,24 @@ class MembersController < ApplicationController
         redirect_to members_url,
                     notice: 'Member was successfully destroyed.'
       end
-      format.json { head :no_content }
     end
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
   def set_member
     @member = Member.find(params[:id])
   end
 
+  # Never trust parameters; allow only white listed attributes through.
   def member_params
-    params.fetch(:member, {}).permit(:username, :firstname, :lastname, :email, :bio, :avatar)
+    params.fetch(:member, {})
+          .permit(:username, :firstname, :lastname, :email, :bio, :avatar)
+  end
+
+  # Don't trust the parameters from the search form either.
+  def search_query
+    params.permit(:query)[:query]
   end
 end
