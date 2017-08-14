@@ -2,6 +2,8 @@
 
 <h1>Members</h1>
 
+<%= render "search" %>
+
 <table>
   <thead>
     <tr>
@@ -21,6 +23,10 @@
   </tbody>
 </table>
 
-<br></br>
+<br>
+
+<% if no_search_results %>
+  <h4>No members found for search '<%= search_query %>'.</h4>
+<% end %>
 
 <%= link_to 'New Member', new_member_path %>
