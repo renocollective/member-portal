@@ -2,10 +2,10 @@
 
 # Membership controller
 class MembersController < ApplicationController
-  before_action :set_member, only: %i(show
+  before_action :set_member, only: %i[show
                                       edit
                                       update
-                                      destroy)
+                                      destroy]
 
   # GET /members
   # GET /members.json
