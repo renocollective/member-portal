@@ -23,8 +23,5 @@
 .byebug_history
 
 public/uploads
-<<<<<<< HEAD
 
 .env.local
-=======
->>>>>>> f49bf91... Added recommended changes to CarrierWave
