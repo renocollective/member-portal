@@ -12,8 +12,6 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-
-        
         <td><%= member.username%></td>
         <td><%= link_to 'Show', member %></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
@@ -23,6 +21,6 @@
   </tbody>
 </table>
 
-<br>
+<br></br>
 
 <%= link_to 'New Member', new_member_path %>
