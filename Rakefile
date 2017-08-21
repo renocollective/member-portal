@@ -3,6 +3,6 @@
 
 require_relative 'config/application'
 
-require 'carrierwave/orm/activerecord'
+
 
 Rails.application.load_tasks
