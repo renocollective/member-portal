@@ -15,6 +15,8 @@
 <h3>Bio</h3>
   <%= @member.bio %>
 
+  <h3>Avatar</h3>
+  <img src= "<%= @member.avatar.url(:thumb) %>"/>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
