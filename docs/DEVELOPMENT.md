@@ -1,5 +1,16 @@
 # Developing Member Portal
 
+## EditorConfig
+
+> [EditorConfig](http://editorconfig.org) helps developers define and maintain consistent coding styles between different editors and IDEs.
+
+This project uses EditorConfig to maintain consistency. It is encouraged that all project participants enable EditorConfig support in their preferred editor. Support exists for most major editors today. Plugins for the most popular editors include:
+
+* [Sublime Text](https://github.com/sindresorhus/editorconfig-sublime#readme)
+* [Atom](https://github.com/sindresorhus/atom-editorconfig#readme)
+* VS Code - _As of 2017 rc1 Visual Studio ships with `.editorconfig` support baked in_
+
+Plugins and support for many other editors can be found in the _[Download a Plugin](http://editorconfig.org/#download)_ section of the EditorConfig website.
 
 ## Rubocop, Guard and Your Editor
 
