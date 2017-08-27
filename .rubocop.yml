@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - .bundle/**/*
+    - db/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+  TargetRubyVersion: 2.3
+
+Metrics/LineLength:
+  Max: 80
