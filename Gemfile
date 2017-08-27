@@ -47,6 +47,7 @@ group :development do
   gem 'rubocop', '~> 0.49.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'travis', '~> 1.8.8'
   gem 'web-console', '>= 3.3.0'
 end
 

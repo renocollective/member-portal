@@ -1,4 +1,6 @@
-# README
+# Member Portal
+
+[![Build Status](https://travis-ci.org/renocollective/member-portal.svg?branch=master)](https://travis-ci.org/renocollective/member-portal)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

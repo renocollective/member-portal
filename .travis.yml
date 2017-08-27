@@ -1,0 +1,15 @@
+addons:
+  postgresql: 9.6
+before_script:
+  - bundle exec rails db:setup
+bundler_args: --jobs 4 --retry 3 --without development
+cache: bundler
+language: ruby
+notifications:
+  email: false
+rvm:
+  - 2.3.4
+  - 2.4.1
+script:
+  - bundle exec rails test
+sudo: false
