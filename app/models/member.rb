@@ -6,7 +6,7 @@ class Member < ApplicationRecord
   validates :username, :firstname, :lastname, :email, :bio, presence: true
 
   include AlgoliaSearch
-  algoliasearch do
+  algoliasearch per_environment: true, sanitize: true do
     attribute :firstname, :lastname, :email, :bio
   end
 

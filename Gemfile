@@ -51,5 +51,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Algolia - SSaS Searchss
-gem 'algoliasearch-rails'
+# Algolia - SaaS Searches
+gem 'algoliasearch-rails', '~> 1.14.0'
