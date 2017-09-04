@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require algolia/v3/algoliasearch.min
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
