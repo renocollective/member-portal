@@ -2,10 +2,7 @@
 
 # Membership controller
 class MembersController < ApplicationController
-  before_action :set_member, only: %i[show
-                                      edit
-                                      update
-                                      destroy]
+  before_action :set_member, only: %i[show edit update destroy]
 
   # GET /members
   # GET /members.json
@@ -71,6 +68,8 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.fetch(:member, {}).permit(:username, :firstname, :lastname, :email, :bio, :avatar)
+    params.fetch(:member, {}).permit(
+      :username, :firstname, :lastname, :email, :bio, :avatar
+    )
   end
 end

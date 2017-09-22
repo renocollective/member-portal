@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.1.0'
@@ -31,22 +30,23 @@ gem 'carrierwave', '~> 1.1.0'
 # gem 'capistrano-rails', group: :development
 gem 'mini_magick', '3.8.0'
 
-
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'guard-minitest', '~> 2.4.6'
+  gem 'guard-rubocop', '~> 1.3.0'
+  gem 'rubocop', '~> 0.49.1', require: false
   gem 'selenium-webdriver'
   # Loads environment variables
   gem 'dotenv-rails', '~> 2.2.1'
 end
 
 group :development do
-  gem 'guard-rubocop', '~> 1.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'rubocop', '~> 0.49.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'travis', '~> 1.8.8'
   gem 'web-console', '>= 3.3.0'
 end
 
