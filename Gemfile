@@ -36,7 +36,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
-  gem 'rubocop', '~> 0.49.1', require: false
+  gem 'rubocop', '~> 0.50.0', require: false
   gem 'selenium-webdriver'
   # Loads environment variables
   gem 'dotenv-rails', '~> 2.2.1'
