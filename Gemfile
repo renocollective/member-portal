@@ -31,6 +31,7 @@ gem 'carrierwave', '~> 1.1.0'
 gem 'mini_magick', '= 4.8.0'
 
 group :development, :test do
+  gem 'bundler-audit', '~> 0.6.0'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.15'
