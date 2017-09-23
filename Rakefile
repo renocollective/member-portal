@@ -5,5 +5,9 @@
 # be available to Rake.
 
 require_relative 'config/application'
+require 'bundler/audit/task'
 
 Rails.application.load_tasks
+
+# Provide `bundle:audit` task
+Bundler::Audit::Task.new
