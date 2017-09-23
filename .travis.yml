@@ -2,7 +2,7 @@ addons:
   postgresql: 9.6
 before_script:
   - bundle exec rails db:setup
-bundler_args: --jobs 4 --retry 3 --without development
+bundler_args: --jobs 4 --retry 3
 cache: bundler
 language: ruby
 notifications:
