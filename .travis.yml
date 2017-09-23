@@ -12,6 +12,7 @@ rvm:
   - 2.4.2
 script:
   - bundle exec rails bundle:audit
+  - bundle exec license_finder --quiet
   - bundle exec rubocop
   - bundle exec rails test
 sudo: false
