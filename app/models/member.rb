@@ -7,5 +7,5 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
-  validates :username, :firstname, :lastname, :email, :bio, presence: true
+  validates :username, :firstname, :lastname, :email, :bio, presence: true, on: :update
 end
