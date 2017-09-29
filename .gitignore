@@ -5,6 +5,25 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 .bundle
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore the postgres database.
+/db_data
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/node_modules
+/yarn-error.log
+
 .byebug_history
 .env.local
 .env.test.local
