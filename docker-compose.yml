@@ -24,6 +24,7 @@ services:
      depends_on:
        - db
      image: renocollective/rails
+     #build: ../member-portal-docker
      volumes:
        - ./:/var/www/app
      ports:
