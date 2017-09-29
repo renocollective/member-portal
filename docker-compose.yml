@@ -1,22 +1,28 @@
 version: '3'
 
 services:
-  #  db:
-  #    image: mysql:5.7
-  #    volumes:
-  #      - ./db_data:/var/lib/mysql
-  #    ports:
-  #      - "3309:3306"
-  #    restart: always
-  #    environment:
-  #      MYSQL_ROOT_PASSWORD: develdevel
-  #      MYSQL_DATABASE: devel
-  #      MYSQL_USER: devel
-  #      MYSQL_PASSWORD: devel
+   db:
+     image: postgres:10
+     volumes:
+       - ./db_data:/var/lib/postgresql/data
+     ports:
+       - "3309:3306"
+     restart: always
+     environment:
+       POSTGRES_DB: member_portal
+       POSTGRES_USER: member_portal
+       POSTGRES_PASSWORD: s*2XK0hi=d6udkZsV+Zwy8RdZTbb#mp0h=w:y-,z.nTE8g7?x4|:RX8B^1$J
+   adminer:
+    depends_on:
+      - db
+    image: adminer
+    restart: always
+    ports:
+        - 8088:8080
 
    rails:
-    #  depends_on:
-    #    - db
+     depends_on:
+       - db
      image: renocollective/rails
      volumes:
        - ./:/var/www/app
@@ -24,6 +30,7 @@ services:
        - "3000:3000"
      restart: always
     #  environment:
+     command: bash -c 'bundle install --no-deployment && rails db:migrate && rails s'
 
 volumes:
     db_data:
