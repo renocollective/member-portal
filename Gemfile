@@ -29,4 +29,5 @@ group :development, :test do
   gem 'license_finder', '~> 3.0.4'
   gem 'rubocop', '~> 0.50.0', require: false
   gem 'selenium-webdriver', '~> 3.6.0'
+  gem 'simplecov', '~> 0.15.1', require: false
 end
