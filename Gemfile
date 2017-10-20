@@ -27,7 +27,7 @@ group :development, :test do
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
   gem 'license_finder', '~> 3.0.4'
-  gem 'rubocop', '~> 0.50.0', require: false
+  gem 'rubocop', '~> 0.51.0', require: false
   gem 'selenium-webdriver', '~> 3.6.0'
   gem 'simplecov', '~> 0.15.1', require: false
 end
