@@ -4,7 +4,7 @@ require 'test_helper'
 
 class MembersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @member = members(:one)
+    @member = create(:member)
   end
 
   test 'should get index' do
