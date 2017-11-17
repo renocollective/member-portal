@@ -37,3 +37,12 @@ Many editors also have plugins for running Rubocop and helping you to stay withi
 * [Atom](https://atom.io/packages/linter-rubocop)
 * [Sublime Text](https://github.com/SublimeLinter/SublimeLinter-rubocop)
 * [VS Code](https://github.com/misogi/vscode-ruby-rubocop)
+
+## Environment Variables
+[dotenv](https://github.com/bkeepers/dotenv) makes it easier to store configuration details
+such as database URL or API key.  Each environment (e.g. development, test) has a .env file to hold environment specific info outside of the repo.  You'll need to copy the .env file and make .env.local and .env.local.test files and swap the insecure placeholders.  For example, .env.local needs the local database url.
+
+```
+DATABASE_URL=postgresql://localhost/member_portal_development
+```
+
