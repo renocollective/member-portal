@@ -54,3 +54,10 @@
     :why: Approved development dependency
     :versions: []
     :when: 2017-09-23 04:20:13.685598000 Z
+- - :license
+  - blankslate
+  - MIT
+  - :who: Phil Cohen
+    :why: https://github.com/masover/blankslate/blob/master/MIT-LICENSE
+    :versions: []
+    :when: 2017-12-02 20:07:03.804253000 Z
