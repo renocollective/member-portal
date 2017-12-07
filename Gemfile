@@ -25,7 +25,7 @@ group :development, :test do
   gem 'byebug', '~> 9.1.0', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.16'
   gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'faker', '~> 1.8.4'
+  gem 'faker', '~> 1.8.5'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
   gem 'license_finder', '~> 4.0.2'
