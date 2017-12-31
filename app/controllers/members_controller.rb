@@ -7,7 +7,12 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @members =
+      if search_query
+        Member.search_result(search_query)
+      else
+        Member.all
+      end
   end
 
   # GET /members/1
@@ -63,13 +68,19 @@ class MembersController < ApplicationController
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
   def set_member
     @member = Member.find(params[:id])
   end
 
+  # Never trust parameters; allow only white listed attributes through.
   def member_params
-    params.fetch(:member, {}).permit(
-      :username, :firstname, :lastname, :email, :bio, :avatar
-    )
+    params.fetch(:member, {})
+          .permit(:username, :firstname, :lastname, :email, :bio, :avatar)
+  end
+
+  # Don't trust the parameters from the search form either.
+  def search_query
+    params.permit(:query)[:query]
   end
 end

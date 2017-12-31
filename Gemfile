@@ -20,6 +20,9 @@ group :development do
   gem 'web-console', '~> 3.5.1'
 end
 
+# Algolia - SaaS Searchss
+gem 'algoliasearch-rails', '~> 1.14.0'
+
 group :development, :test do
   gem 'bundler-audit', '~> 0.6.0'
   gem 'byebug', '~> 9.1.0', platforms: %i[mri mingw x64_mingw]
