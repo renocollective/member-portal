@@ -9,5 +9,6 @@ FactoryBot.define do
     bio Faker::Name.title
     password Faker::Internet.password
     password_confirmation { password }
+    after :confirm!
   end
 end
