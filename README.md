@@ -97,6 +97,8 @@ Now you should be able to view the rails app at http://localhost:3000/
 
 * To run rails in docker
 * ```docker-compose up``` or ```docker-compose up -d``` to not show console output.
+* DB Migrate: (can be run without rebooting container, just open a new terminal)
+* ```docker-compose run --rm rails rails db:migrate RAILS_ENV=development```
 
 ## Contributing
 
