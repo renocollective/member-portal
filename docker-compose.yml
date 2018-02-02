@@ -8,10 +8,8 @@ services:
      ports:
        - "3309:3306"
      restart: always
-     environment:
-       POSTGRES_DB: member_portal
-       POSTGRES_USER: member_portal
-       POSTGRES_PASSWORD: s*2XK0hi=d6udkZsV+Zwy8RdZTbb#mp0h=w:y-,z.nTE8g7?x4|:RX8B^1$J
+     env_file:
+       - ./.env.local
 
    adminer:
     depends_on:
@@ -36,7 +34,8 @@ services:
      ports:
        - "3000:3000"
      restart: always
-    #  environment:
+     env_file:
+       - ./.env.local
      #command: bash -c 'bundle install --no-deployment && rails db:migrate && rails s'
      command: /start.sh
 
