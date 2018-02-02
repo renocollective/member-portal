@@ -12,8 +12,11 @@ services:
        POSTGRES_DB: member_portal
        POSTGRES_USER: member_portal
        POSTGRES_PASSWORD: s*2XK0hi=d6udkZsV+Zwy8RdZTbb#mp0h=w:y-,z.nTE8g7?x4|:RX8B^1$J
+
    adminer:
     depends_on:
+      - db
+    links:
       - db
     image: adminer
     restart: always
@@ -23,15 +26,24 @@ services:
    rails:
      depends_on:
        - db
-     image: renocollective/rails
-     #build: ../member-portal-docker
+     links:
+       - db
+     #image: renocollective/rails
+     build: ../member-portal-docker
      volumes:
-       - ./:/var/www/app
+       - ./:/app
+       - box:/box
      ports:
        - "3000:3000"
      restart: always
     #  environment:
-     command: bash -c 'bundle install --no-deployment && rails db:migrate && rails s'
+     #command: bash -c 'bundle install --no-deployment && rails db:migrate && rails s'
+     command: /start.sh
+
+   box:
+    image: busybox
+    volumes:
+      - box:/box
 
 volumes:
-    db_data:
+    box:
