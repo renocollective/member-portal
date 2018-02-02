@@ -26,10 +26,8 @@ Things you may want to cover:
 * ...
 
 #Docker
-* To run rails in docker
-* ```docker-compose up``` or ```docker-compose up -d``` to not show console output.
-* DB Migrate: (can be run without rebooting container, just open a new terminal)
-* ```docker-compose run --rm rails rails db:migrate RAILS_ENV=development```
+* Checkout [renocollective/docker-rails-dev](https://github.com/renocollective/docker-rails-dev) alongside this project.
+* See [renocollective/docker-rails-dev](https://github.com/renocollective/docker-rails-dev)s [Readme](https://github.com/renocollective/docker-rails-dev/blob/master/README.md) for setup instructions.
 
 #Contributors
 
