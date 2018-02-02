@@ -1,0 +1,63 @@
+---
+- - :whitelist
+  - MIT
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:12:42.203797000 Z
+- - :whitelist
+  - Apache 2.0
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:13:13.743139000 Z
+- - :whitelist
+  - New BSD
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:13:29.251637000 Z
+- - :whitelist
+  - Simplified BSD
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:13:38.890911000 Z
+- - :whitelist
+  - ISC
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:13:50.459085000 Z
+- - :whitelist
+  - ruby
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:14:00.222870000 Z
+- - :whitelist
+  - Apache
+  - :who: Phil Cohen
+    :why: Permissive License
+    :versions: []
+    :when: 2017-09-23 04:14:20.402111000 Z
+- - :license
+  - bundler
+  - MIT
+  - :who: Phil Cohen
+    :why: https://github.com/bundler/bundler/blob/master/LICENSE.md
+    :versions: []
+    :when: 2017-09-23 04:15:11.571644000 Z
+- - :approve
+  - bundler-audit
+  - :who: Phil Cohen
+    :why: Approved development dependency
+    :versions: []
+    :when: 2017-09-23 04:20:13.685598000 Z
+- - :license
+  - blankslate
+  - MIT
+  - :who: Phil Cohen
+    :why: https://github.com/masover/blankslate/blob/master/MIT-LICENSE
+    :versions: []
+    :when: 2017-12-02 20:07:03.804253000 Z

@@ -1,6 +1,6 @@
 # Member Portal
 
-[![Build Status](https://travis-ci.org/renocollective/member-portal.svg?branch=master)](https://travis-ci.org/renocollective/member-portal)
+[![Build Status](https://travis-ci.org/renocollective/member-portal.svg?branch=master)](https://travis-ci.org/renocollective/member-portal) [![Dependency Status](https://gemnasium.com/badges/github.com/renocollective/member-portal.svg)](https://gemnasium.com/github.com/renocollective/member-portal) [![Maintainability](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/maintainability)](https://codeclimate.com/github/renocollective/member-portal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/test_coverage)](https://codeclimate.com/github/renocollective/member-portal/test_coverage)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

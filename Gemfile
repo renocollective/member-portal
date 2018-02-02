@@ -2,54 +2,34 @@
 
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'carrierwave', '~> 1.2.1'
+gem 'coffee-rails', '~> 4.2.0'
+gem 'dotenv-rails', '~> 2.2.1'
+gem 'jbuilder', '~> 2.7.0'
+gem 'mini_magick', '~> 4.8.0'
+gem 'pg', '~> 0.21.0'
+gem 'puma', '~> 3.11.0'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.10'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'sass-rails', '~> 5.0.7'
+gem 'turbolinks', '~> 5.0.1'
+gem 'uglifier', '~> 3.2.0'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'carrierwave', '~> 1.1.0'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-gem 'mini_magick', '= 4.8.0'
+group :development do
+  gem 'listen', '~> 3.1.5'
+  gem 'travis', '~> 1.8.8'
+  gem 'web-console', '~> 3.5.1'
+end
 
 group :development, :test do
   gem 'bundler-audit', '~> 0.6.0'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.15'
+  gem 'byebug', '~> 9.1.0', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara', '~> 2.16'
+  gem 'factory_bot_rails', '~> 4.8.2'
+  gem 'faker', '~> 1.8.4'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
-  gem 'rubocop', '~> 0.50.0', require: false
-  gem 'selenium-webdriver'
-  # Loads environment variables
-  gem 'dotenv-rails', '~> 2.2.1'
+  gem 'license_finder', '~> 4.0.2'
+  gem 'rubocop', '~> 0.51.0', require: false
+  gem 'selenium-webdriver', '~> 3.7.0'
+  gem 'simplecov', '~> 0.15.1', require: false
 end
-
-group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'travis', '~> 1.8.8'
-  gem 'web-console', '>= 3.3.0'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

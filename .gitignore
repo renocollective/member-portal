@@ -4,6 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+<<<<<<< HEAD
 # Ignore bundler config.
 /.bundle
 
@@ -23,8 +24,17 @@
 /node_modules
 /yarn-error.log
 
+=======
+.bundle
+>>>>>>> 2510a487e94402523e9316348c031320da368bf3
 .byebug_history
-
-public/uploads
-
 .env.local
+.env.test.local
+coverage
+db/*.sqlite3
+db/*.sqlite3-journal
+log
+node_modules
+public/uploads
+tmp
+yarn-error.log
