@@ -24,13 +24,15 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
           username: 'test-member',
           firstname: 'Test',
           lastname: 'Member',
-          email: 'test@member.com',
-          bio: 'Just a test member'
+          email: 'dinosaur@member.com',
+          bio: 'Just a test member',
+          password: 'member03',
+          password_confirmation: 'member03'
         }
       }
     end
 
-    assert_redirected_to member_url(Member.last)
+    assert_redirected_to root_url
   end
 
   test 'should show member' do

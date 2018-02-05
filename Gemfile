@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.2.2'
 gem 'coffee-rails', '~> 4.2.0'
+gem 'devise', '~> 4.3.0'
 gem 'dotenv-rails', '~> 2.2.1'
 gem 'jbuilder', '~> 2.7.0'
 gem 'mini_magick', '~> 4.8.0'
