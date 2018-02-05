@@ -7,13 +7,12 @@ Rails.application.configure do
   # Added from devise instructions
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
+
+  # Using Mailcatcher for dev.
+  # Refer to Docs for use in /docs/Mailer.md
   config.action_mailer.smtp_settings = {
-    address: ENV.fetch('SMTP_ADDRESS'),
-    port: 587,
-    domain: ENV.fetch('SMTP_DOMAIN'),
-    authentication: 'plain',
-    user_name: ENV.fetch('SMTP_USERNAME'),
-    password: ENV.fetch('SMTP_PASSWORD')
+    address: '127.0.0.1',
+    port: 1025
   }
 
   # Don't care if the mailer can't send.

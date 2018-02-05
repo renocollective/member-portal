@@ -62,6 +62,18 @@ Rails.application.configure do
   # environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "member-portal_#{Rails.env}"
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch('SMTP_ADDRESS'),
+    port: ENV.fetch('SMTP_PORT'),
+    domain: ENV.fetch('SMTP_DOMAIN'),
+    authentication: 'plain',
+    user_name: ENV.fetch('SMTP_USERNAME'),
+    password: ENV.fetch('SMTP_PASSWORD')
+  }
+
+  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
