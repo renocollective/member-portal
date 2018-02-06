@@ -2,11 +2,13 @@
 
 source 'https://rubygems.org'
 
+gem 'bootstrap', '~> 4.0.0'
 gem 'carrierwave', '~> 1.2.2'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'devise', '~> 4.3.0'
 gem 'dotenv-rails', '~> 2.2.1'
 gem 'jbuilder', '~> 2.7.0'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'mini_magick', '~> 4.8.0'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.11.2'
