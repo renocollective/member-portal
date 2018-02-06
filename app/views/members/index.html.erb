@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Members</h1>
+<div class="container">
+  <h1>Members</h1>
 
 
-<% if member_signed_in? %>
-  You are signed in!
-  <br/>
-  <%=link_to 'Logout', destroy_member_session_path, method: :delete %>
-  <br/>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @members.each do |member| %>
+  <% if member_signed_in? %>
+    You are signed in!
+    <br/>
+    <%=link_to 'Logout', destroy_member_session_path, method: :delete %>
+    <br/>
+    <table>
+      <thead>
         <tr>
-          <td><%= member.username%></td>
-          <td><%= link_to 'View Profile', member %></td>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-<% else %>
-  <%= link_to 'Login', new_member_session_path %>
-  <br/>
-  <%= link_to 'Sign Up',  new_member_registration_path %>
-<% end %>
+      <tbody>
+        <% @members.each do |member| %>
+          <tr>
+            <td><%= member.username%></td>
+            <td><%= link_to 'View Profile', member %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <% else %>
+    <%= link_to 'Login', new_member_session_path %>
+    <br/>
+    <%= link_to 'Sign Up',  new_member_registration_path %>
+  <% end %>
+</div>
