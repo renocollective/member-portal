@@ -68,7 +68,9 @@ class MembersController < ApplicationController
 
   def member_params
     params.fetch(:member, {}).permit(
-      :username, :firstname, :lastname, :email, :bio, :avatar, :company, :phone, :website_url, :website_name, :twitter, :facebook, :linkedin, :instagram, :slack, :work_pattern, :activities, :interests, :location
+      :username, :firstname, :lastname, :email, :bio, :avatar, :company, :phone,
+      :website_url, :website_name, :twitter, :facebook, :linkedin, :instagram,
+      :slack, :work_pattern, :activities, :interests, :location
     )
   end
 end
