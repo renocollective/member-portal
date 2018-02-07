@@ -41,8 +41,6 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @member == current_member && @member.update(member_params)
         format.html { redirect_to @member, notice: 'Member updated.' }
-      elsif @member != current_member && @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Please don\'t edit other peoples\' profiles.' }
       else
         format.html { render :edit }
       end
