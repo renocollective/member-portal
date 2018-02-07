@@ -31,7 +31,7 @@ group :development, :test do
   gem 'faker', '~> 1.8.7'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
-  gem 'license_finder', '~> 5.0.0'
+  gem 'license_finder', '~> 5.0.2'
   gem 'rubocop', '~> 0.52.1', require: false
   gem 'selenium-webdriver', '~> 3.9.0'
   gem 'simplecov', '~> 0.15.1', require: false
