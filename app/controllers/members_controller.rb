@@ -39,14 +39,12 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1.json
   def update
     respond_to do |format|
-      if @member == current_member
-        if @member.update(member_params)
-          format.html { redirect_to @member, notice: 'Member updated.' }
-        else
-          format.html { render :edit }
-        end
-      else
+      if @member == current_member && @member.update(member_params)
+        format.html { redirect_to @member, notice: 'Member updated.' }
+      elsif @member != current_member && @member.update(member_params)
         format.html { redirect_to @member, notice: 'Please don\'t edit other peoples\' profiles.' }
+      else
+        format.html { render :edit }
       end
     end
   end
