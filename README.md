@@ -1,6 +1,6 @@
 # Member Portal
 
-The Member Portal is an open source community software project built by and for the Reno Collective. This application will provide the members of the Reno Collective with a way to better network and share ideas with one another.  
+The Member Portal is an open source community software project built by and for the Reno Collective. This application will provide the members of the Reno Collective with a way to better network and share ideas with one another.
 
 [![Build Status](https://travis-ci.org/renocollective/member-portal.svg?branch=master)](https://travis-ci.org/renocollective/member-portal) [![Dependency Status](https://gemnasium.com/badges/github.com/renocollective/member-portal.svg)](https://gemnasium.com/github.com/renocollective/member-portal) [![Maintainability](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/maintainability)](https://codeclimate.com/github/renocollective/member-portal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/test_coverage)](https://codeclimate.com/github/renocollective/member-portal/test_coverage)
 
@@ -73,6 +73,12 @@ Next, run:
 rails db:migrate
 ```
 
+For the application to successfully run, you will need to create a .env.local file and add the following lines to the file:
+```
+SECRET_KEY_BASE=insecure-secret_key_base
+DATABASE_URL=postgresql://localhost
+```
+
 To start and run the rails application:
 ```shell
 rails s
@@ -86,17 +92,4 @@ Now you should be able to view the rails app at http://localhost:3000/
 
 ## Contributing
 
-Please see [CONTRIBUTING.md] for more information on how to contribute to the project.
-
-## Authors
-
-* Josh Fleming [@joshfleming](https://github.com/joshfleming)
-* Colin Loretz [@colinloretz](http://twitter.com/colinloretz)
-* Sue-Ting Chene
-* Nathan Digangi [@netn8](http://twitter.com/netn8)
-* Lindsay Barrett [@labarrett](https://github.com/labarrett)
-* Brenda Penn [@BrendaPenn](https://github.com/BrendaPenn)
-* Kendall Lewis [@kendall-lewis](https://github.com/kendall-lewis)
-* Veronica Cannon [@veronicacannon](https://github.com/veronicacannon)
-
-See also the list of [contributors](https://github.com/renocollective/member-portal/graphs/contributors) who participated in this project.
+Please see [CONTRIBUTING.md](https://github.com/renocollective/member-portal/blob/master/CONTRIBUTING.md) for more information on how to contribute to the project.
