@@ -5,7 +5,7 @@ Rails.application.configure do
   config.logger = Logger.new(STDOUT)
 
   # Set log level
-  config.log_level = ENV.fetch("LOG_LEVEL", "ERROR")
+  config.log_level = ENV.fetch('LOG_LEVEL', 'ERROR')
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
