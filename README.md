@@ -1,8 +1,8 @@
 # Member Portal
 
-The Member Portal is an open source community software project built by and for the Reno Collective. This application will provide the members of the Reno Collective with a way to better network and share ideas with one another.
-
 [![Build Status](https://travis-ci.org/renocollective/member-portal.svg?branch=master)](https://travis-ci.org/renocollective/member-portal) [![Dependency Status](https://gemnasium.com/badges/github.com/renocollective/member-portal.svg)](https://gemnasium.com/github.com/renocollective/member-portal) [![Maintainability](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/maintainability)](https://codeclimate.com/github/renocollective/member-portal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d9cc45b50be4caa86a17/test_coverage)](https://codeclimate.com/github/renocollective/member-portal/test_coverage)
+
+The Member Portal is an open source community software project built by and for the Reno Collective. This application will provide the members of the Reno Collective with a way to better network and share ideas with one another.
 
 ## Getting Started
 
