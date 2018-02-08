@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1.json
   def update
     respond_to do |format|
-      if @member.update(member_params)
+      if @member == current_member && @member.update(member_params)
         format.html { redirect_to @member, notice: 'Member updated.' }
       else
         format.html { render :edit }
@@ -68,7 +68,9 @@ class MembersController < ApplicationController
 
   def member_params
     params.fetch(:member, {}).permit(
-      :username, :firstname, :lastname, :email, :bio, :avatar
+      :username, :firstname, :lastname, :email, :bio, :avatar, :company, :phone,
+      :website_url, :website_name, :twitter, :facebook, :linkedin, :instagram,
+      :slack, :work_pattern, :activities, :interests, :location
     )
   end
 end
