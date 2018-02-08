@@ -47,7 +47,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update member' do
     patch member_url(@member), params: { member: {} }
-    assert_redirected_to member_url(@member)
+    assert_response :success
   end
 
   test 'should destroy member' do
