@@ -15,7 +15,7 @@ gem 'puma', '~> 3.11.2'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0.7'
 gem 'turbolinks', '~> 5.1.0'
-gem 'uglifier', '~> 4.1.5'
+gem 'uglifier', '~> 4.1.6'
 
 group :development do
   gem 'listen', '~> 3.1.5'
