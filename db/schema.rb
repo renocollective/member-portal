@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180213043044) do
     t.string "linkedin"
     t.string "instagram"
     t.string "slack"
+    t.boolean "admin", default: false
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
