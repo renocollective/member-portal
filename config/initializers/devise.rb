@@ -153,7 +153,7 @@ Devise.setup do |config|
   # before confirming their account.
   config.confirm_within = 3.days
 
-  config.reconfirmable = false
+  config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
   config.confirmation_keys = [:email]
