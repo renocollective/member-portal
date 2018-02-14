@@ -84,6 +84,9 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise_invitable (1.7.3)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     docile (1.1.5)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
@@ -324,6 +327,7 @@ DEPENDENCIES
   carrierwave (~> 1.2.2)
   coffee-rails (~> 4.2.0)
   devise (~> 4.4.1)
+  devise_invitable (~> 1.7.0)
   dotenv-rails (~> 2.2.1)
   factory_bot_rails (~> 4.8.2)
   faker (~> 1.8.7)
