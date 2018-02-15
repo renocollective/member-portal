@@ -18,8 +18,10 @@ Make sure that you already have Xcode on your machine before running the followi
 ```shell
 xcode-select --install
 ```
+An install window will appear. Click install to begin installing Xcode.
 
 If rvm isn't already installed on your machine, [install rvm](https://rvm.io/rvm/install)
+After installing rvm, you may need to close the terminal and open it back up in order to successfully run an rvm.
 
 To update or install Ruby 2.3.5, run:
 ```shell
@@ -36,7 +38,8 @@ To install Rails V5.1.4, run:
 gem install rails -v 5.1.4
 ```
 
-To install PostgreSQL, make sure your brew is up to date.
+To install PostgreSQL, make sure your brew is up to date. If you don't yet have homebrew installed, install [homebrew](https://brew.sh/).
+
 Run the following command lines:
 ```shell
 brew doctor
@@ -45,21 +48,28 @@ brew doctor
 brew update
 ```
 
-Now run the following command to install PostgreSQL:
+If you don't have PostgreSQL installed, run:
 ```shell
 brew install postgresql
 ```
-It might take a little while to compile and install. After compilation is done, it’ll give you some instructions to finish setting it up.
 
-To get the project on your local machine, you should [fork](https://help.github.com/articles/fork-a-repo/) from the  [renocollective/member-portal](https://github.com/renocollective/member-portal) repository.
-
-Once you have forked the project, clone this git repository by running:
+The postgresql server may need to be started if it isn't already running. To start the server,
+run:
 ```shell
-git clone https://github.com/YOUR-USERNAME/member-portal
+pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
+```
+
+Clone this git repository by running:
+```shell
+git clone https://github.com/renocollective/member-portal
 ```
 Now you should have a local copy of the member-portal project.
 
-Before you can successfully run the project, you need install all the dependencies for the Rail application by running:
+Once cloning the member portal, switch to the project directory:
+```shell
+cd member-portal
+```
+Before you can successfully run the project, you need to install all the dependencies for the Rail application by running:
 ```shell
 bundle install
 ```
@@ -68,15 +78,13 @@ To successfully run this command, you will need to have bundler installed. To in
 gem install bundler
 ```
 
+For the application to successfully run, you will need to create a .env.local file. Copy and paste the text in the .env file into the new .env.local file.
+
+
 Next, run:
 ```shell
+rails db:setup
 rails db:migrate
-```
-
-For the application to successfully run, you will need to create a .env.local file and add the following lines to the file:
-```
-SECRET_KEY_BASE=insecure-secret_key_base
-DATABASE_URL=postgresql://localhost
 ```
 
 To start and run the rails application:
