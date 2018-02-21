@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class MembersController < Admin::ApplicationController
     # To customize the behavior of this controller,
@@ -9,7 +11,7 @@ module Admin
     #     page(params[:page]).
     #     per(10)
     # end
-    
+
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
     #   Member.find_by!(slug: param)
