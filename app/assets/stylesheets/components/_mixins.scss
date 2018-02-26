@@ -1,0 +1,94 @@
+@mixin columns($columns: '3-213') {
+  @if $columns == '3-213' {
+    @include make-row();
+    >div {
+      @include make-col-ready();
+    }
+    >div:nth-child(n+1) {
+      @include media-breakpoint-up(sm) {
+        @include make-col(6);
+        @include make-col-offset(3);
+      }
+    }
+    >div:nth-child(1n+2) {
+      @include media-breakpoint-up(sm) {
+        @include make-col(3);
+      }
+    }
+    >div:nth-child(n+2) {
+      @include media-breakpoint-up(sm) {
+        @include make-col-offset(-9);
+      }
+    }
+    >div:nth-child(n+3) {
+      @include media-breakpoint-up(sm) {
+        @include make-col-offset(6);
+      }
+    }
+  }
+}
+
+@mixin inputs-width($width){
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    max-width:$width;
+    width:$width;
+  }
+}
+
+@mixin buttons-width($width){
+  input[type="submit"],
+  button {
+    max-width:$width;
+    width:$width;
+  }
+}
+
+@mixin btn($bg: $gray-600, $text: $gray-100){
+  background-color:$bg;
+  color:$text;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-image: none;
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+}
