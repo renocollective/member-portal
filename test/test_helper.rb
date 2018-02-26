@@ -12,5 +12,6 @@ require 'mocha/mini_test'
 module ActiveSupport
   class TestCase
     include FactoryBot::Syntax::Methods
+    include Warden::Test::Helpers
   end
 end
