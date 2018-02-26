@@ -1,0 +1,7 @@
+@include inputs-width(100%);
+@include buttons-width(25%);
+
+input[type="submit"],
+button {
+  @include btn($gray-600, $gray-100);
+}
