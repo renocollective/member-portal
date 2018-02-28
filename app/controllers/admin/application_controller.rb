@@ -21,7 +21,6 @@ module Admin
       current_member.try(:admin?)
     end
 
-    helper_method :authenticate_admin
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
