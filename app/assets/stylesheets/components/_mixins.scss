@@ -92,3 +92,13 @@
     }
   }
 }
+
+@mixin circle($size: 50px){
+  border-radius: 50%;
+  width:$size;
+  height:$size;
+  line-height:$size;
+  text-align: center;
+  background-color:$gray-400;
+  color:$gray-600;
+}
