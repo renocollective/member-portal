@@ -1,10 +1,12 @@
-<h1>Editing Member</h1>
+<div class="container">
+  <h1>Editing Member</h1>
 
-<% if @member == current_member %>
-  <%= render 'form', member: @member %>
-<% else %>
-  <p>Sorry but it's bad manners to another user's profile :)</p>
-<% end %>
+  <% if @member == current_member %>
+    <%= render 'form', member: @member %>
+  <% else %>
+    <p>Sorry but it's bad manners to another user's profile :)</p>
+  <% end %>
 
-<%= link_to 'Show', @member %> |
-<%= link_to 'Back', members_path %>
+  <%= link_to 'Show', @member %> |
+  <%= link_to 'Back', members_path %>
+</div>  

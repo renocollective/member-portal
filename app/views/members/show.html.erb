@@ -1,53 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<img src= "<%= @member.avatar.url(:thumb) %>"/>
+  <img src= "<%= @member.avatar.url(:thumb) %>"/>
 
-<h3>Username</h3>
-<%= @member.username %>
+  <h3>Username</h3>
+  <%= @member.username %>
 
-<h3>First Name</h3>
-<%= @member.firstname %>
+  <h3>First Name</h3>
+  <%= @member.firstname %>
 
-<h3>Last Name</h3>
-<%= @member.lastname %>
+  <h3>Last Name</h3>
+  <%= @member.lastname %>
 
-<h3>Location</h3>
-<%= @member.location %>
+  <h3>Location</h3>
+  <%= @member.location %>
 
-<h3>Company</h3>
-<%= @member.company %>
+  <h3>Company</h3>
+  <%= @member.company %>
 
-<h3>Email</h3>
-  <%= @member.email %>
+  <h3>Email</h3>
+    <%= @member.email %>
 
-<h3>Phone</h3>
-<%= @member.phone %>
+  <h3>Phone</h3>
+  <%= @member.phone %>
 
-<h3>Website</h3>
-<%= link_to @member.website_name, @member.website_url %>
+  <h3>Website</h3>
+  <%= link_to @member.website_name, @member.website_url %>
 
-<h3>Work Pattern</h3>
-<%= @member.work_pattern %>
+  <h3>Work Pattern</h3>
+  <%= @member.work_pattern %>
 
-<h3>What <%= @member.firstname %> does</h3>
-<%= @member.activities %>
+  <h3>What <%= @member.firstname %> does</h3>
+  <%= @member.activities %>
 
-<h3>Interests</h3>
-<%= @member.interests %>
+  <h3>Interests</h3>
+  <%= @member.interests %>
 
-<h3>Bio</h3>
-  <%= @member.bio %>
+  <h3>Bio</h3>
+    <%= @member.bio %>
 
-<h3>Social Media</h3>
-<ul>
-  <li><%= link_to 'facebook', @member.facebook %></li>
-  <li><%= link_to 'twitter', @member.twitter %></li>
-  <li><%= link_to 'instagram', @member.instagram %></li>
-  <li><%= link_to 'linkedin', @member.linkedin %></li>
-</ul>
+  <h3>Social Media</h3>
+  <ul>
+    <li><%= link_to 'facebook', @member.facebook %></li>
+    <li><%= link_to 'twitter', @member.twitter %></li>
+    <li><%= link_to 'instagram', @member.instagram %></li>
+    <li><%= link_to 'linkedin', @member.linkedin %></li>
+  </ul>
 
-<h3>Slack</h3>
-  <%= @member.slack %>
+  <h3>Slack</h3>
+    <%= @member.slack %>
 
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+  <%= link_to 'Edit', edit_member_path(@member) %> |
+  <%= link_to 'Back', members_path %>
+</div>
