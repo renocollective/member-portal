@@ -1,5 +1,5 @@
 <div class="sign-in">
-  <div>
+  <div aria-label="Sign in Form" tabindex="0">
     <h2>Sign In</h2>
     <p>Rem debitis est id non. Officiis nostrum libero non in molestias minus est optio. Sequi iure id beatae consectetur aut voluptatem. Quidem non ducimus voluptatem praesentium doloremque molestiae dicta id. Quia sed suscipit animi debitis sapiente nostrum.</p>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -27,7 +27,7 @@
 
       <%= render "devise/shared/links" %>
     </div>
-    <div>
+    <div aria-label="Contact Information" tabindex="0">
       <strong>Reno Collective</strong>
       <p>
         1515 Plumas St.<br />
