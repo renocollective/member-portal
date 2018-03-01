@@ -35,16 +35,15 @@ as well as a link to its edit page.
 <section class="main-content__body">
   <dl>
     <% page.attributes.each do |attribute| %>
-      <dt class="attribute-label" id="<%= attribute.name %>"
+      <dt class="attribute-label" id="<%= attribute.name %>">
       <%= t(
         "helpers.label.#{resource_name}.#{attribute.name}",
         default: attribute.name.titleize,
       ) %>
       </dt>
 
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>">
-        <%= render_field attribute %>
-      </dd>
+      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
+          ><%= render_field attribute %></dd>
     <% end %>
   </dl>
 </section>
