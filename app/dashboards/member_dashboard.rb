@@ -2,6 +2,7 @@
 
 require 'administrate/base_dashboard'
 
+# member dashboard fields
 class MemberDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -59,13 +60,10 @@ class MemberDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    invited_by
     username
     firstname
     lastname
     email
-    sign_in_count
-    last_sign_in_at
     company
     location
     phone
@@ -75,7 +73,7 @@ class MemberDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how members are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(member)
-  #   "Member ##{member.id}"
-  # end
+  def display_resource(member)
+    member.lastname
+  end
 end
