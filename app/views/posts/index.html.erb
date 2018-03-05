@@ -1,6 +1,10 @@
 <div class="container">
+  <% controller.redirect_to '/members/sign_in' unless member_signed_in?  %>
+
   <% @posts.each do |post| %>
-       <h1><%= link_to "post.title", post %></h1>
+       <h1><%= link_to post.title, post %></h1>
        <p><%= post.content %></p>
   <% end %>
-</div>  
+
+  <%= link_to 'Add New Post', new_post_path %>
+</div>
