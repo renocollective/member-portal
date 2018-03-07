@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :category do
-    name ''
+    name 'Test Category'
   end
 end

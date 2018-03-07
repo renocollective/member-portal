@@ -20,32 +20,44 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to @post, notice: 'The post was created!'
-    else
-      render new
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post created.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
   def edit() end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Update successful'
-    else
-      render edit
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Update successful.' }
+      else
+        format.html { render :edit }
+      end
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to root_path, notice: 'Post destroyed'
+    respond_to do |format|
+      format.html do
+        redirect_to posts_url,
+                    notice: 'Post was successfully destroyed.'
+      end
+      format.json { head :no_content }
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :category_id)
+    params.fetch(:post, {}).permit(
+      :title, :content, :category_id
+    )
   end
 
   def find_post
