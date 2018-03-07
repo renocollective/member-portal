@@ -33,7 +33,6 @@ class MemberDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     invited_by
-    id
     firstname
     lastname
     sign_in_count
