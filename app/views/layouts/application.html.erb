@@ -31,8 +31,13 @@
           <ul class="navbar-nav">
             <% if member_signed_in? %>
               <li class="nav-item">
-                <%= link_to current_member.email, edit_member_path(current_member), class: 'nav-link' %>
+                <%= link_to current_member.email, member_path(current_member), class: 'nav-link' %>
               </li>
+              <% if current_member.admin? %>
+                <li class="nav-item">
+                  <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
+                </li>
+              <% end %>
               <li class="nav-item">
                 <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
               </li>
