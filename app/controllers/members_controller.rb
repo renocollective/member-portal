@@ -70,7 +70,7 @@ class MembersController < ApplicationController
     params.fetch(:member, {}).permit(
       :username, :firstname, :lastname, :email, :bio, :avatar, :company, :phone,
       :website_url, :website_name, :twitter, :facebook, :linkedin, :instagram,
-      :slack, :work_pattern, :activities, :interests, :location
+      :slack, :work_pattern, :activities, :interests, :location, :password, :password_confirmation
     )
   end
 end
