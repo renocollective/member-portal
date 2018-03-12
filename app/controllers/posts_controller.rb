@@ -4,12 +4,7 @@
 class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
   def index
-    if params[:category].blank?
-      @posts = Post.all.order('created_at DESC')
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @posts = Post.where(category_id: @category_id).order('created_at DESC')
-    end
+    @posts = Post.all
   end
 
   def show() end
@@ -20,12 +15,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post created.' }
-      else
-        format.html { render :new }
-      end
+    @post.member = current_member
+    if @post.save
+      redirect_to @post, notice: 'The post was created!'
+    else
+      render :new
     end
   end
 
@@ -56,7 +50,7 @@ class PostsController < ApplicationController
 
   def post_params
     params.fetch(:post, {}).permit(
-      :title, :content, :category_id
+      :title, :content
     )
   end
 

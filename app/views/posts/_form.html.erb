@@ -11,8 +11,6 @@
        </div>
   <% end %>
 
-  <%= form.collection_select(:category_id, Category.all, :id, :name, {prompt:'Choose a category' }) %><br>
-  <br>
   <%= form.label :title %><br>
   <%= form.text_field :title, placeholder: 'Type the post title here' %><br>
   <%= form.label :content %><br>
