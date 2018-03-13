@@ -36,6 +36,6 @@ group :development, :test do
   gem 'license_finder', '~> 5.0.3'
   gem 'mocha', '~> 1.3.0'
   gem 'rubocop', '~> 0.53.0', require: false
-  gem 'selenium-webdriver', '~> 3.10.0'
+  gem 'selenium-webdriver', '~> 3.11.0'
   gem 'simplecov', '~> 0.15.1', require: false
 end
