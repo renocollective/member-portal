@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :homepage
+  root to: 'homepage#index'
   namespace :admin do
     resources :members
 

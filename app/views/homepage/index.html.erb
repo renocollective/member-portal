@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+<body>
+  <div id="background">
+    <header class ="cf">
+      <div class="wrapper_wide">
+        <a href="#" id="logo">Member<span>Portal</span></a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </header>
+
+
+
+
+      <% if member_signed_in? %>
+        You are signed in!
+        <br/>
+        <%=link_to 'Logout', destroy_member_session_path, method: :delete %>
+        <br/>
+
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+
+        </table>
+
+      <% else %>
+        <div class="container">
+          <h1>Reno Collective</h1>
+
+        <div id="form">
+          <div class="wrapper_skinny">
+            <form>
+              <div class="field">
+                <label>Email</label><br>
+                <input type="email" placeholder="Email">
+              </div>
+
+              <div class="field">
+                <label>Password</label><br>
+                <input type="password" placeholder="Password">
+              </div>
+
+              <!-- <div class="actions">
+                <input type="submit" class"button button_highlight">
+              </div> -->
+            </form>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="wrapper_skinny">
+          <%= link_to 'Login', new_member_session_path, class:'button button_highlight' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
