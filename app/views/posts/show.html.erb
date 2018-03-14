@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @post.title %></h1>
-  <h6>Posted by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
+  <h6>Post by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
   <p><%= @post.content %></p>
 
   <% if current_member == @post.member %>
