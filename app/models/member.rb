@@ -2,6 +2,7 @@
 
 # ActiveRecord Member user
 class Member < ApplicationRecord
+  has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :confirmable, :database_authenticatable, :registerable,

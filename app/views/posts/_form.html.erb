@@ -1,0 +1,21 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+  <% if @post.errors.any? %>
+       <div>
+            <p><%= pluralize(@post.errors.count, "error") %> prevented this post from saving.</p>
+            <ul>
+                 <% @post.errors.full_messages.each do |msg| %>
+                 <li><%= msg %></li>
+                 <% end %>
+            </ul>
+       </div>
+  <% end %>
+
+  <%= form.label :title %><br>
+  <%= form.text_field :title, placeholder: 'Type the post title here' %><br>
+  <%= form.label :content %><br>
+  <%= form.text_area :content, size: '60x12', placeholder: 'Type the post text here' %><br>
+
+  <%= form.submit %>
+
+<% end %>
