@@ -37,5 +37,5 @@ group :development, :test do
   gem 'mocha', '~> 1.3.0'
   gem 'rubocop', '~> 0.53.0', require: false
   gem 'selenium-webdriver', '~> 3.11.0'
-  gem 'simplecov', '~> 0.15.1', require: false
+  gem 'simplecov', '~> 0.16.0', require: false
 end
