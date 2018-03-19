@@ -3,6 +3,8 @@
   <h6>Post by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
   <p><%= @post.content %></p>
 
+  <%= render 'comments/comment' %> 
+
   <% if current_member == @post.member %>
     <%= link_to "Edit", edit_post_path(@post) %>
     <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }%>
