@@ -3,7 +3,8 @@
 # comments for posts controller
 class CommentsController < ApplicationController
   before_action :find_post
-  before_action :find_comment, only: %i[edit update destroy]
+  before_action :find_comment, only: %i[edit update destroy comment_owner]
+  before_action :comment_owner, only: %i[edit update destroy]
 
   def create
     @comment = @post.comments.create(comment_params)
@@ -41,5 +42,11 @@ class CommentsController < ApplicationController
 
   def find_comment
     @comment = @post.comments.find(params[:id])
+  end
+
+  def comment_owner
+    flash[:notice] = 'Only owner of the comment can delete or update' unless
+      current_member.id == @comment.member_id
+    redirect_to post_path(@post) unless current_member.id == @comment.member_id
   end
 end
