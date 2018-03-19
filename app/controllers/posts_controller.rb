@@ -4,12 +4,11 @@
 class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
   def index
-    @posts = Post.all.order('created_at DESC')
-    @comments = Comment.where(post_id: @post).order('created_at DESC')
+    @posts = Post.all.includes(:comments).order('created_at DESC')
   end
 
   def show
-    @comments = Comment.where(post_id: @post).order('created_at DESC')
+    @comments = Comment.where(post_id: @post)
   end
 
   def new
