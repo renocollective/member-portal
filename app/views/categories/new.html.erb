@@ -1,0 +1,6 @@
+<div class="container">
+  <% controller.redirect_to '/members/sign_in' unless member_signed_in?  %>
+  <h1>New Category</h1>
+  <%= render 'form', category: @category %>
+  <%= link_to 'Back', root_path %>
+</div>

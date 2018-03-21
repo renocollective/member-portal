@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class CategoryTest < ActiveSupport::TestCase
+class CategoriesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
