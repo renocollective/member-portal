@@ -34,7 +34,7 @@ group :development, :test do
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
   gem 'license_finder', '~> 5.0.3'
-  gem 'mocha', '~> 1.3.0'
+  gem 'mocha', '~> 1.4.0'
   gem 'rubocop', '~> 0.54.0', require: false
   gem 'selenium-webdriver', '~> 3.11.0'
   gem 'simplecov', '~> 0.16.1', require: false
