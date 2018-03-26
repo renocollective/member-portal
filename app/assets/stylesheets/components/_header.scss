@@ -1,4 +1,38 @@
-body > header:first-of-type {
+header {
 
+  .brand-logo {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-left: 0.75rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+  }
 
+  .brand-logo img {
+    max-width: 80px;
+  }
+
+  .brand-logo > img {
+    vertical-align: text-top;
+  }
+
+  nav {
+     background-color: rgb(40,44,52) !important;
+
+     a {
+       text-decoration: none;
+       color: rgba(255, 255, 255, 0.5);
+     }
+
+     a:hover {
+       color: rgba(255, 255, 255, 0.8);
+     }
+
+     .active > a {
+       color: #fff;
+     }
+  }
 }

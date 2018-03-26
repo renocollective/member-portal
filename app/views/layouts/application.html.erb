@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MemberPortal</title>
+    <title>Member Portal</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,8 +10,9 @@
   <body>
     <header>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <%= link_to 'Home', members_path, 'aria-label' => 'Member Portal' %>
+      <nav class="navbar navbar-expand-lg">
+
+        <%= link_to image_tag("brand-logo.png", border: 0), members_path, class: 'brand-logo' %>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+              <%= link_to 'Home', root_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item <%= 'active' if current_page?(members_path) %>">
               <%= link_to 'Members', members_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= 'active' if current_page?(posts_path) %>">
               <%= link_to 'Posts', posts_path, class: 'nav-link' %>
             </li>
           </ul>
