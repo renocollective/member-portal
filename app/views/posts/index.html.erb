@@ -4,9 +4,11 @@
   <h1>Posts</h1>
   <%= link_to 'New Post', new_post_path %>
 
+
   <% @posts.each do |post| %>
        <h1><%= link_to post.title, post %></h1>
        <h6>Post by <%= post.member.firstname %> <%= post.member.lastname %></h6>
        <p><%= post.content %></p>
   <% end %>
+
 </div>
