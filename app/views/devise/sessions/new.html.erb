@@ -8,8 +8,10 @@
     </header>
 
     <div class="wrapper_skinny">
-
-        <h2>Sign In</h2>
+        <%= image_tag("rc_white.png") %>
+        <% if alert %>
+          <p class="alert" style="color:white"><%= alert %></p>
+        <% end %>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <p class="field">
             <%= f.label :email %><br />

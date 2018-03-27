@@ -3,30 +3,23 @@
   @include columns('3-213');
 }
 
-img {
-  transform: scale(.3);
-}
-
-h4 {
-  padding-top: 4rem;
-  color: white;
-  font-weight: 300;
-  text-align: center;
-}
-
-.logo_pic{
-  margin: 0px auto;
-  padding: 0px auto;
-}
 .questions {
   padding-top: .2rem;
-}
-a {
-
-  text-decoration: none;
-  color: white;
 }
 
 .contact-info {
   color: white;
+}
+
+.wrapper_skinny {
+  width: 35%;
+  margin: 0 auto;
+
+  a {
+    color: white;
+  }
+
+  img {
+    transform: scale(.5);
+  }
 }
