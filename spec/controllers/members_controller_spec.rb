@@ -15,15 +15,15 @@ RSpec.describe MembersController, type: :controller do
 
   it 'should create a member' do
     params = {
-        member: {
-          username: 'test-member',
-          firstname: 'Test',
-          lastname: 'Member',
-          email: 'dinosaur@member.com',
-          bio: 'Just a test member',
-          password: 'member03',
-          password_confirmation: 'member03'
-        }
+      member: {
+        username: 'test-member',
+        firstname: 'Test',
+        lastname: 'Member',
+        email: 'dinosaur@member.com',
+        bio: 'Just a test member',
+        password: 'member03',
+        password_confirmation: 'member03'
+      }
     }
     before_count = Member.count
     post :create, params: params
