@@ -5,7 +5,25 @@ AllCops:
     - script/**/*
     - tmp/**/*
     - vendor/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
   TargetRubyVersion: 2.3
 
 Metrics/LineLength:
   Max: 80
+
+# The rspec DSL necessitates long blocks for these methods.
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - it
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
+
+# All specs require 'rails_helper' so ignore this requirement in spec files.
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - spec/**/*_spec.rb

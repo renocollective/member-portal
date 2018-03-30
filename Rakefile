@@ -6,8 +6,13 @@
 
 require_relative 'config/application'
 require 'bundler/audit/task'
+require 'rubocop/rake_task'
 
 Rails.application.load_tasks
 
 # Provide `bundle:audit` task
 Bundler::Audit::Task.new
+
+RuboCop::RakeTask.new
+
+task default: %i[rubocop spec]
