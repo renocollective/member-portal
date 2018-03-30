@@ -25,3 +25,13 @@ git push origin your-branch-name
 5. Submit a pull request for review.
 
 Click to [here](https://github.com/renocollective/member-portal/graphs/contributors) the list of contributors who participated in this project.
+
+
+After your PR is merged, you sweet open source contributor, you. You'll want to
+update your local branch like this:
+
+```sh
+git checkout master
+git fetch --all
+git rebase upstream/master
+```
