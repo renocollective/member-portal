@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Posts</h1>
-  <%= link_to 'New Post', new_post_path %>
-
+  <%= link_to 'Create New Post', new_post_path %>
+  <br>
+  <h6> Post Categories </h6>
+  <%= render 'shared/nav' %>
 
   <% @posts.each do |post| %>
        <h1><%= link_to post.title, post %></h1>

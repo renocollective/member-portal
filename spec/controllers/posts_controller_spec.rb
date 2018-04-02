@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   let(:admin) { create(:admin) }
   let(:post1) { create(:post) }
+  let(:category1) { create(:category) }
 
   before(:each) do
     authenticate_member(admin)
@@ -22,7 +23,8 @@ RSpec.describe PostsController, type: :controller do
     params = {
       post: {
         title: 'This is a post',
-        content: 'post content'
+        content: 'post content',
+        category_id: category1.id
       }
     }
     expect do
