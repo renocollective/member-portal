@@ -5,12 +5,12 @@ RSpec.describe MembersController, type: :controller do
 
   it 'should get index' do
     get :index
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should get new' do
     get :new
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should create a member' do
@@ -35,7 +35,7 @@ RSpec.describe MembersController, type: :controller do
 
   it 'should get edit a member' do
     get :edit, params: { id: member.id }
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should update a logged in member' do
