@@ -10,12 +10,12 @@ RSpec.describe PostsController, type: :controller do
 
   it 'should get index' do
     get :index
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should get new' do
     get :new
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should create post' do
@@ -32,24 +32,24 @@ RSpec.describe PostsController, type: :controller do
 
   it 'should show post' do
     get :show, params: { id: post1.id }
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
   it 'should get edit' do
     get :edit, params: { id: post1.id }
-    expect(response).to have_http_status(:success)
+    expect(response).to have_http_status(200)
   end
 
-  xit 'should update post' do
-    patch post_url(@post), params: { post: {} }
+  it 'should update post' do
+    patch :update, params: { id: post1.id, post: {} }
+    expect(response).to redirect_to(post_path(post1))
   end
 
-  xit 'should destroy post' do
-    post2 = create(:post)
+  it 'should destroy post' do
+    post1.touch
     before_count = Post.count
     delete :destroy, params: { id: post1.id }
     expect(Post.count).to eq(before_count - 1)
     expect(response).to redirect_to(posts_path)
-    expect(post2).to be_persisted
   end
 end
