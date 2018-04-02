@@ -8,12 +8,19 @@ Rails.application.routes.draw do
     root to: 'members#index'
   end
 
-  devise_for :members
-  resources :members
-  root to: 'home#index'
-
-  resources :posts do
-    resources :comments
-    root to: 'posts#index'
+  authenticated :member do
+    devise_for :members
+    resources :members
+    root to: 'home#index'
   end
+
+  authenticated :member do
+    resources :posts do
+      resources :comments
+      root to: 'posts#index'
+    end
+  end
+
+  root "home#index"
+
 end
