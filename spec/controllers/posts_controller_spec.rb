@@ -46,10 +46,12 @@ RSpec.describe PostsController, type: :controller do
   end
 
   it 'should destroy post' do
+    post2 = create(:post)
     post1.touch
     before_count = Post.count
     delete :destroy, params: { id: post1.id }
     expect(Post.count).to eq(before_count - 1)
     expect(response).to redirect_to(posts_path)
+    expect(post2).to be_persisted
   end
 end
