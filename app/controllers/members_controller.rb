@@ -3,6 +3,7 @@
 # Membership controller
 class MembersController < ApplicationController
   before_action :set_member, only: %i[show edit update destroy]
+  before_action :require_admin!, only: :destroy
 
   # GET /members
   # GET /members.json
@@ -64,6 +65,10 @@ class MembersController < ApplicationController
 
   def set_member
     @member = Member.find(params[:id])
+  end
+
+  def require_admin!
+    redirect_to members_url, notice: 'Unauthorized' unless current_member.admin?
   end
 
   def member_params

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MembersController, type: :controller do
   let(:member) { create(:member) }
+  let(:admin) { create(:admin) }
 
   it 'should get index' do
     get :index
@@ -46,10 +47,22 @@ RSpec.describe MembersController, type: :controller do
 
   it 'should destroy a member' do
     # TODO: We should protect against randos destroying other members.
+    authenticate_member(admin)
     member.touch
     before_count = Member.count
     delete :destroy, params: { id: member.id }
     expect(Member.count).to eq(before_count - 1)
     expect(response).to redirect_to(members_url)
+  end
+
+  it 'should not destroy a member' do
+    # TODO: We should protect against randos destroying other members.
+    authenticate_member(member)
+    member.touch
+    before_count = Member.count
+    delete :destroy, params: { id: member.id }
+    expect(Member.count).to eq(before_count)
+    expect(response).to redirect_to(members_url)
+    expect(member).to be_persisted
   end
 end
