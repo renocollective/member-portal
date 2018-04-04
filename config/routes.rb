@@ -15,11 +15,14 @@ Rails.application.routes.draw do
   end
 
   devise_for :members
+
   resources :members
   root to: 'home#index'
 
-  resources :posts
-  root to: 'posts#index'
+  resources :posts do
+    resources :comments
+    root to: 'posts#index'
+  end
 
   resources :categories
   root to: 'categories#index'
