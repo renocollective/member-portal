@@ -1,20 +1,22 @@
-<div class = "row">
-  <div class = "col-sm-12">
-    <h1>Conversations</h1>
+<div class="container">
+  <div class = "row">
+    <div class = "col-sm-12">
+      <h1>Conversations</h1>
+    </div>
   </div>
-</div>
-<div class = "row">
-  <div class = "col-sm-12">
-    <%= link_to 'Start New Conversation', new_post_path %>
-    <br>
-    <h6> Conversation Categories </h6>
-    <%= render 'shared/nav' %>
-  </div>
-  <div class = "col-10">
-    <% @posts.each do |post| %>
-      <h1><%= link_to post.title, post %></h1>
-      <h6>Posted by <%= post.member.firstname %> <%= post.member.lastname %></h6>
-      <p><%= post.content %></p>
-    <% end %>
+  <div class = "row">
+    <div class = "col-sm-12">
+      <%= link_to 'Start New Conversation', new_post_path %>
+      <br>
+      <h6> Conversation Categories </h6>
+      <%= render 'shared/nav' %>
+    </div>
+    <div class = "col-10">
+      <% @posts.each do |post| %>
+        <h1><%= link_to post.title, post %></h1>
+        <h6>Posted by <%= post.member.firstname %> <%= post.member.lastname %></h6>
+        <p><%= post.content %></p>
+      <% end %>
+    </div>
   </div>
 </div>

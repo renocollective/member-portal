@@ -1,43 +1,52 @@
+<div class="container">
+  <div class = "row">
+    <div class = "col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <% if @member.avatar.url %>
+          <img class="rounded-circle" src="<%= @member.avatar.url %>" alt="profile image" width="140" height="140">
+          <% else %>
+            <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle") %>
+          <% end %>
+          <h5 class="card-title"> <%= @member.firstname %> <%= @member.lastname %> </h5>
+          <p class="card-text">
+            <small><%= @member.location %></small>
+          </p>
+          <p class="card-text">
+            <%= @member.company %>
+          </p>
+          <div>
+            <a href="#" class="badge badge-skill">Videography</a>
+            <a href="#" class="badge badge-skill">Javascript</a>
+            <a href="#" class="badge badge-skill">Startups</a>
+            <a href="#" class="badge badge-skill">Marketing</a>
+            <a href="#" class="badge badge-skill">Coworking</a>
+          </div>
+          <ul>
+            <li><%= link_to @member.website_url, @member.website_url, target: '_new' %></li>
+            <li><%= link_to 'linkedin', 'https://linkedin.com/' + @member.linkedin, target: '_new'  %></li>
+            <li><%= link_to 'facebook', 'https://facebook.com/' + @member.facebook, target: '_new'  %></li>
+            <li><%= link_to 'twitter', 'https://twitter.com/' + @member.twitter, target: '_new'  %></li>
+            <li><%= link_to 'instagram', 'https://instagram.com/' + @member.instagram, target: '_new'  %></li>
+          </ul>
 
-<div class = "row">
-  <div class = "col-md-4">
-    <div class="card text-center">
-      <div class="card-body">
-        <% if @member.avatar.url %>
-        <img class="rounded-circle" src="<%= @member.avatar.url %>" alt="profile image" width="140" height="140">
-        <% else %>
-          <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle") %>
-        <% end %>
-        <h5 class="card-title"> <%= @member.firstname %> <%= @member.lastname %> </h5>
-        <p class="card-text">
-          <%= @member.company %>
-        </p>
-        <p class="card-text">
-          <%= @member.location %>
-        </p>
-        <ul>
-          <li><%= link_to @member.website_url, @member.website_url, target: '_new' %></li>
-          <li><%= link_to 'linkedin', 'https://linkedin.com/' + @member.linkedin, target: '_new'  %></li>
-          <li><%= link_to 'facebook', 'https://facebook.com/' + @member.facebook, target: '_new'  %></li>
-          <li><%= link_to 'twitter', 'https://twitter.com/' + @member.twitter, target: '_new'  %></li>
-          <li><%= link_to 'instagram', 'https://instagram.com/' + @member.instagram, target: '_new'  %></li>
-        </ul>
-        <% if @member == current_member %>
-        <p class = "card-text">
-           <%= link_to 'Edit Your Profile', edit_member_path(@member) %>
-        </p>
-        <% end %>
+          <% if @member == current_member %>
+          <p class = "card-text">
+             <%= link_to 'Edit Your Profile', edit_member_path(@member) %>
+          </p>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class= "col-md-8">
-    <h3>Activities</h3>
-     <%= @member.activities %>
+    <div class= "col-md-8">
+      <h3>Activities</h3>
+       <%= @member.activities %>
 
-     <h3>Interests</h3>
-     <%= @member.interests %>
+       <h3>Interests</h3>
+       <%= @member.interests %>
 
-     <h3>Bio</h3>
-     <%= @member.bio %>
+       <h3>Bio</h3>
+       <%= @member.bio %>
+    </div>
   </div>
 </div>
