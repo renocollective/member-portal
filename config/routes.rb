@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     root to: 'posts#index'
   end
 
+  resources :announcements
+  root to: 'announcements#index'
+
   resources :categories
   root to: 'categories#index'
 end
