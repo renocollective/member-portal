@@ -28,7 +28,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member created.' }
+        format.html { redirect_to @member, notice: 'Profile created.' }
       else
         format.html { render :new }
       end
@@ -40,7 +40,7 @@ class MembersController < ApplicationController
   def update
     respond_to do |format|
       if @member == current_member && @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Member updated.' }
+        format.html { redirect_to @member, notice: 'Profile updated.' }
       else
         format.html { render :edit }
       end

@@ -6,13 +6,14 @@ header {
     padding-bottom: 0.3125rem;
     margin-left: 0.75rem;
     margin-right: 1rem;
+    margin-bottom: 0.2rem;
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
   }
 
   .brand-logo img {
-    max-width: 80px;
+    max-width: 30px;
   }
 
   .brand-logo > img {
@@ -20,19 +21,48 @@ header {
   }
 
   nav {
-     background-color: rgb(40,44,52) !important;
+    font-size: 14px;
+    background-color: rgb(40,44,52) !important;
 
-     a {
-       text-decoration: none;
-       color: rgba(255, 255, 255, 0.5);
-     }
+    .form-control, .btn {
+      font-size: 12px;
+    }
 
-     a:hover {
-       color: rgba(255, 255, 255, 0.8);
-     }
+    .btn {
+      margin-right: 20px;
+    }
 
-     .active > a {
-       color: #fff;
-     }
+    a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .rounded-circle {
+      margin-right: 5px;
+    }
+
+    .dropdown-toggle {
+      margin-right: 10px;
+    }
+
+    .active > a {
+      color: #fff;
+    }
+
+    .dropdown-menu {
+      font-size: 14px;
+
+      a {
+        color: #3097D1;
+      }
+
+      a:hover {
+        color: black;
+      }
+    }
   }
 }

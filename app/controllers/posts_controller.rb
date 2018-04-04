@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.member = current_member
     if @post.save
-      redirect_to @post, notice: 'The post was created!'
+      redirect_to @post, notice: 'The conversation was started!'
     else
       render :new
     end
@@ -36,7 +36,9 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Update successful.' }
+        format.html do
+          redirect_to @post, notice: 'Conversation updated.'
+        end
       else
         format.html { render :edit }
       end
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to posts_url,
-                    notice: 'Post was successfully destroyed.'
+                    notice: 'The conversation was successfully deleted.'
       end
       format.json { head :no_content }
     end

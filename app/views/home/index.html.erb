@@ -1,32 +1,38 @@
-<% controller.redirect_to '/members/sign_in' unless member_signed_in?  %>
+<div class="row" id="home">
+  <div class="col-sm-3">
+    <div class="card" id="profile">
+      <div class="card-body">
+        <h5 class="card-title"><%= current_member.firstname %> <%= current_member.lastname %></h5>
+        <p class="card-text">Your profile coming soon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <h4>Recent Conversations</h4>
+    <% @conversations.each do |post| %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to post.title, post %></h5>
+          <h6>Posted by <%= post.member.firstname %> <%= post.member.lastname %></h6>
+          <p class="card-text"><%= post.content %></p>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to 'View older conversations', posts_path %>
+  </div>
+  <div class="col-sm-3">
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> This is an example of an alert.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <div class="col-sm">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Announcements</h5>
+        <p class="card-text">Display some announcements here</p>
       </div>
     </div>
   </div>

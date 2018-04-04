@@ -145,10 +145,9 @@ $white: #FFF;
 
  }
 
-
-
  @import 'bootstrap';
  @import 'variables';
+ @import 'home';
  @import 'components/mixins';
  @import 'components/page';
  @import 'components/form';
