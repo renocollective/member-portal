@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
+    resources :announcements
+    root to: 'announcements#index'
+
     resources :members
     root to: 'members#index'
 
