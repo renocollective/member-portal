@@ -1,75 +1,172 @@
-<%= form_with(model: member, local: true) do |form| %>
-  <% if member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+<div class = "row">
+  <div class = "col-12">
+    <% if member.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
 
-      <ul>
-      <% member.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<h3>Username</h3>
-  <%= form.text_field :username %>
-
-<h3>First Name</h3>
-  <%= form.text_field :firstname %>
-
-<h3>Last Name</h3>
-  <%= form.text_field :lastname %>
-
-<h3>Location</h3>
-  <%= form.text_field :location %>
-
-<h3>Email</h3>
-    <%= form.text_field :email %>
-
-<h3>Company</h3>
-    <%= form.text_field :company %>
-
-<h3>Work Pattern</h3>
-    <%= form.text_field :work_pattern %>
-
-<h3>What do you do?</h3>
-    <%= form.text_field :activities %>
-
-<h3>Interests</h3>
-    <%= form.text_field :interests %>
-
-<h3>Website Title</h3>
-    <%= form.text_field :website_name %>
-
-<h3>Website URL</h3>
-    <%= form.text_field :website_url %>
-
-<h3>Phone</h3>
-    <%= form.text_field :phone %>
-
-<h3>Facebook</h3>
-    <%= form.text_field :facebook %>
-
-<h3>Twitter</h3>
-    <%= form.text_field :twitter %>
-
-<h3>LinkedIn</h3>
-    <%= form.text_field :linkedin %>
-
-<h3>Instagram</h3>
-    <%= form.text_field :instagram %>
-
-<h3>Slack</h3>
-    <%= form.text_field :slack %>
-
-<h3>Bio</h3>
-  <%= form.text_area :bio %>
-
-<h3>Image</h3>
-<%= form.file_field :avatar%>
-
-<br></br>
-  <div class="actions">
-    <%= form.submit %>
+        <ul>
+        <% member.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+
+
+
+ <div class = "row">
+   <div class = "col-md-8">
+      <h3 class="mb-3">Update Your Profile</h3>
+   </div>
+   <div class = "col-md-4">
+   </div>
+ </div>
+
+<div class = "row">
+  <div class="col-md-8">
+     <%= form_with(model: member, local: true) do |form| %>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <% if(member.avatar) %>
+          <div class="input-group mb-3">
+            <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="100" height="100"> <%= form.file_field :avatar %>
+          </div>
+          <% else %>
+          <label>Profile Photo</label>
+          <div class="input-group mb-3">
+            <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle", alt: "Edit Entry") %>
+
+            <%= form.file_field :avatar%>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">First name</label>
+          <%= form.text_field :firstname, class: "form-control", placeholder: "Username" %>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Last name</label>
+          <%= form.text_field :lastname, class: "form-control", placeholder: "Username" %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="username">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">@</span>
+          </div>
+          <%= form.text_field :username, class: "form-control", placeholder: "Username" %>
+          <div class="invalid-feedback" style="width: 100%;">
+            Your username is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <%= form.text_field :email, class: "form-control", placeholder: "you@example.com" %>
+      </div>
+
+      <div class="mb-3">
+        <label for="email">Website</label>
+        <%= form.text_field :website_url, class: "form-control", placeholder: "http://yourwebsite.com" %>
+      </div>
+
+      <div class="mb-3">
+        <label for="address">Interests</label>
+        <%= form.text_field :interests, class: "form-control", placeholder: "Running, programming, knitting" %>
+      </div>
+
+      <div class="mb-3">
+        <label for="address2">What do you do?</label>
+        <%= form.text_field :activities, class: "form-control", placeholder: "Programmer" %>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="country">Work Pattern</label>
+          <select class="custom-select d-block w-100" id="workpattern">
+            <option value="">Choose...</option>
+            <option>Freelancer</option>
+            <option>Student</option>
+            <option>Remote Employee</option>
+            <option>Owner</option>
+            <option>Startup</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid work pattern.
+          </div>
+        </div>
+      </div>
+
+      <hr class="mb-4">
+
+      <h4 class="mb-3">Social Profiles</h4>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="cc-name">Facebook</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
+            </div>
+            <%= form.text_field :facebook, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cc-number">Twitter</label>
+          <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
+           </div>
+           <%= form.text_field :twitter, class: "form-control" %>
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="cc-name">Instagram</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">https://instagram.com</span>
+            </div>
+            <%= form.text_field :instagram, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cc-number">LinkedIn</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">https://linkedin.com/in/</span>
+            </div>
+            <%= form.text_field :linkedin, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="cc-name">Slack</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">@</span>
+            </div>
+            <%= form.text_field :slack, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <%= form.submit "Save", class: 'btn btn-primary btn-lg btn-block' %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+     <h4 class="mb-3">Your Skills</h4>
+     <p>Add skills to display on your profile.</p>
+
+     <hr class="mb-4">
+  </div>
+</div>

@@ -1,37 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<div class="container">
-  <h1>Members</h1>
-  <hr>
-  <div class="card-deck">
-  <% @members.each_with_index do |member, index| %>
-        <div class="card text-center">
-        <div class="card-body">
-          <% if member.avatar.url(:thumb) %>
-            <img class="rounded-circle" src="<%= member.avatar.url(:thumb) %>" alt="profile image" width="140" height="140">
-          <% else %>
-            <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle", alt: "Edit Entry") %>
-          <% end %>
-          <h5 class="card-title"> <%= member.firstname %> <%= member.lastname %> </h5>
-          <p class="card-text">
-            <%= member.company %>
-          </p>
-          <p class="card-text">
-            <%= member.bio %>
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"> <%= link_to 'View Profile', member, class: "btn btn-outline-secondary" %></small>
-        </div>
-      </div>
-
-    <% if ((index+1) % 3) == 0 %>
-      </div>
-      <br>
-      <div class="card-deck">
-    <% end %>
-
-  <% end %>
+<div class = "row">
+  <div class = "col-12">
+    <h1>Members</h1>
   </div>
-
+</div>
+<div class = "row">
+  <div class = "col-12">
+    <div class="card-deck">
+      <% @members.each_with_index do |member, index| %>
+        <div class="card text-center">
+          <div class="card-body">
+            <% if member.avatar.url %>
+              <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="140" height="140">
+            <% else %>
+              <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle", alt: "Edit Entry") %>
+            <% end %>
+            <h5 class="card-title"> <%= member.firstname %> <%= member.lastname %> </h5>
+            <p class="card-text">
+              <%= member.company %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"> <%= link_to 'View Profile', member, class: "btn btn-outline-secondary" %></small>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

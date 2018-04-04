@@ -14,6 +14,14 @@
       <% end %>
     </header>
 
-    <%= yield %>
+    <div class="container">
+      <% if(notice) %>
+      <div class="alert alert-secondary" role="alert">
+        <%= notice %>
+      </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

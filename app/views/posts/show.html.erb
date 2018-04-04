@@ -1,12 +1,12 @@
 <div class="container">
   <h1><%= @post.title %></h1>
-  <h6>Conversation started by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
+  <h6>Posted by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
   <p><%= @post.content %></p>
 
   <%= render 'comments/comment' %>
 
   <% if current_member == @post.member %>
-    <%= link_to "Edit", edit_post_path(@post) %>
-    <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to "Edit this Conversation", edit_post_path(@post) %> |
+    <%= link_to "Delete this Conversation", @post, method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </div>

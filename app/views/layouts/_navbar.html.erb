@@ -19,28 +19,32 @@
    </li>
  </ul>
 
- <form class="form-inline my-2 my-lg-0" id="member-search">
-   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
- </form>
-
  <ul class="navbar-nav">
    <% if member_signed_in? %>
-     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_member.email %>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'Your Profile', member_path(current_member), class: 'nav-link' %>
-          <% if current_member.admin? %>
-            <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
-          <% end %>
-          <div class="dropdown-divider"></div>
-          <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
-        </div>
-      </li>
+   <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <% if(current_member.avatar.url) %>
+        <img class="rounded-circle" src="<%= current_member.avatar.url(:thumb) %>" width="25" height="25">
+       <% else %>
+        <%= image_tag("default-avatar.jpeg", size: "25x25", class: "rounded-circle") %>
+       <% end %>
+       <%= current_member.username %>
+     </a>
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <%= link_to 'Your Profile', member_path(current_member), class: 'nav-link' %>
+       <% if current_member.admin? %>
+       <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
+       <% end %>
+       <div class="dropdown-divider"></div>
+       <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
+     </div>
+   </li>
    <% end %>
  </ul>
+
+ <form class="form-inline my-2 my-lg-0" id="member-search">
+   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+ </form>
 </div>
 </nav>
 <br>

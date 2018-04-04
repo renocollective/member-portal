@@ -9,5 +9,7 @@ class Member < ApplicationRecord
   devise :invitable, :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
+
   validates :email, presence: true
+  validates :username, presence: true
 end
