@@ -2,6 +2,7 @@
 
 require 'administrate/base_dashboard'
 
+# post admin dashboard
 class PostDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -29,37 +30,22 @@ class PostDashboard < Administrate::BaseDashboard
     member
     title
     category
-    comments
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    member
     category
-    comments
-    id
     title
     content
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    member
     category
-    comments
     title
     content
   ].freeze
-
-  # Overwrite this method to customize how posts are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(post)
-  #   "Post ##{post.id}"
-  # end
 end

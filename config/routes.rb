@@ -10,8 +10,10 @@ Rails.application.routes.draw do
     resources :categories
     root to: 'categories#index'
 
-    resources :posts
-    root to: 'posts#index'
+    resources :posts do
+      resources :categories
+      root to: 'posts#index'
+    end
   end
 
   devise_for :members
