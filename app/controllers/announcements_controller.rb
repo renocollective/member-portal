@@ -11,7 +11,6 @@ class AnnouncementsController < ApplicationController
 
   def create
     @announcement = Announcement.new(announcement_params)
-    @announcement.member = current_member
     if @announcement.save
       redirect_to @announcement, notice: 'The announcement was created!'
     else
@@ -50,7 +49,7 @@ class AnnouncementsController < ApplicationController
 
   def announcement_params
     params.fetch(:announcement, {}).permit(
-      :title, :content, :member_id
+      :title, :content
     )
   end
 

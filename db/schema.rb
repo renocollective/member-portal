@@ -10,18 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_04_213000) do
+ActiveRecord::Schema.define(version: 2018_04_04_220044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
   create_table "announcements", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.bigint "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_announcements_on_member_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -74,6 +89,8 @@ ActiveRecord::Schema.define(version: 2018_04_04_213000) do
     t.string "linkedin"
     t.string "instagram"
     t.string "slack"
+    t.bigint "role_id"
+    t.integer "role"
     t.boolean "admin", default: false
     t.string "invitation_token"
     t.datetime "invitation_created_at"
@@ -84,6 +101,7 @@ ActiveRecord::Schema.define(version: 2018_04_04_213000) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "unconfirmed_email"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["invitation_token"], name: "index_members_on_invitation_token", unique: true
@@ -91,6 +109,7 @@ ActiveRecord::Schema.define(version: 2018_04_04_213000) do
     t.index ["invited_by_id"], name: "index_members_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_members_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_members_on_role_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -104,6 +123,13 @@ ActiveRecord::Schema.define(version: 2018_04_04_213000) do
     t.index ["member_id"], name: "index_posts_on_member_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "comments", "members"
   add_foreign_key "comments", "posts"
+  add_foreign_key "members", "roles"
 end
