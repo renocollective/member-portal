@@ -23,11 +23,21 @@
             <a href="#" class="badge badge-skill">Coworking</a>
           </div>
           <ul>
+            <% if @member.website_url? %>
             <li><%= link_to @member.website_url, @member.website_url, target: '_new' %></li>
+            <% end %>
+            <% if @member.linkedin? %>
             <li><%= link_to 'linkedin', 'https://linkedin.com/' + @member.linkedin, target: '_new'  %></li>
+            <% end %>
+            <% if @member.facebook? %>
             <li><%= link_to 'facebook', 'https://facebook.com/' + @member.facebook, target: '_new'  %></li>
+            <% end %>
+            <% if @member.twitter? %>
             <li><%= link_to 'twitter', 'https://twitter.com/' + @member.twitter, target: '_new'  %></li>
+            <% end %>
+            <% if @member.instagram? %>
             <li><%= link_to 'instagram', 'https://instagram.com/' + @member.instagram, target: '_new'  %></li>
+            <% end %>
           </ul>
 
           <% if @member == current_member %>

@@ -1,12 +1,38 @@
-<div class="container">
-  <h1><%= @post.title %></h1>
-  <h6>Posted by <%= @post.member.firstname %> <%= @post.member.lastname %></h6>
-  <p><%= @post.content %></p>
+<div class="container conversation">
+  <div class = "row">
+    <div class = "col-md-8">
+      <h1><%= @post.title %></h1>
+    </div>
+    <div class = "col-md-4 edit-meta">
+      <span class = "float-right">
+      <% if current_member == @post.member %>
+        <%= link_to "Delete this Conversation", @post, method: :delete, data: { confirm: "Are you sure?" } %> |
+        <%= link_to "Edit this Conversation", edit_post_path(@post) %>
+      <% end %>
+    </span>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+      <div class = "author">
+        <div class = "author-photo float-left">
+        <% if @post.member.avatar.url %>
+          <img class="rounded-circle" src="<%= @post.member.avatar.url %>" alt="profile image" width="35" height="35">
+        <% else %>
+          <%= image_tag("default-avatar.jpeg", size: "35x35", class: "rounded-circle", alt: "Edit Entry") %>
+        <% end %>
+      </div>
+        <div class = "author-meta">
+          <h6 class = "name"><%= link_to @member.fullname, @post.member %></h6>
+          <h6 class = "posted-time"><%= time_ago_in_words(@post.created_at) %> ago</h6>
+        </div>
+      </div>
 
-  <%= render 'comments/comment' %>
+      <p><%= simple_format(@post.content).gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %></p>
 
-  <% if current_member == @post.member %>
-    <%= link_to "Edit this Conversation", edit_post_path(@post) %> |
-    <%= link_to "Delete this Conversation", @post, method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+      <hr class="mb-4">
+
+      <%= render 'comments/comment' %>
+    </div>
+  </div>
 </div>

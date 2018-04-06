@@ -1,31 +1,58 @@
-<div class="container">
+<div class="container" id="members">
   <div class = "row">
     <div class = "col-12">
       <h1>Members</h1>
     </div>
   </div>
   <div class = "row">
-    <div class = "col-12">
-      <div class="card-deck">
-        <% @members.each_with_index do |member, index| %>
-          <div class="card text-center">
-            <div class="card-body">
-              <% if member.avatar.url %>
-                <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="140" height="140">
-              <% else %>
-                <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle", alt: "Edit Entry") %>
-              <% end %>
-              <h5 class="card-title"> <%= member.firstname %> <%= member.lastname %> </h5>
-              <p class="card-text">
-                <%= member.company %>
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"> <%= link_to 'View Profile', member, class: "btn btn-outline-secondary" %></small>
-            </div>
-          </div>
-        <% end %>
+
+    <div class = "col-md-2">
+      <div>
+        <a href="#" class="badge badge-skill">Videography</a> <br />
+        <a href="#" class="badge badge-skill">Javascript</a> <br />
+        <a href="#" class="badge badge-skill">Startups</a> <br />
+        <a href="#" class="badge badge-skill">Marketing</a> <br />
+        <a href="#" class="badge badge-skill">Coworking</a> <br />
       </div>
     </div>
+    <div class = "col-md-10">
+      <div class = "container-fluid">
+        <div class = "row">
+          <% @members.each_with_index do |member, index| %>
+              <div class = "col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card text-center member-profile">
+                  <div class="card-body">
+                    <a href = "<%= member_path(member) %>">
+                      <% if member.avatar.url %>
+                        <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="100" height="100">
+                      <% else %>
+                        <%= image_tag("default-avatar.jpeg", size: "100x100", class: "rounded-circle", alt: "Edit Entry") %>
+                      <% end %>
+                    </a>
+                    <h5 class="card-title member-name"><%= link_to member.firstname? ? member.fullname : member.username, member %></h5>
+
+                    <p class="card-text member-bio">
+                       <% if member.title? && member.company %>
+                      <%= member.title %> at <%= member.company %>
+                       <% else %>
+                       &nbsp;
+                       <% end %>
+                    </p>
+
+                    <hr />
+                    <div>
+                      <a href="#" class="badge badge-skill">Videography</a>
+                      <a href="#" class="badge badge-skill">Javascript</a>
+                      <a href="#" class="badge badge-skill">Startups</a>
+                      <a href="#" class="badge badge-skill">Marketing</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
