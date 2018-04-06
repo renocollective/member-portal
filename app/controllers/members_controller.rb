@@ -64,7 +64,7 @@ class MembersController < ApplicationController
   private
 
   def set_member
-    @member = Member.find(params[:id])
+    @member = Member.find_by_username(params[:id])
   end
 
   def require_admin!

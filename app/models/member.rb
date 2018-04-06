@@ -16,4 +16,8 @@ class Member < ApplicationRecord
   def fullname
     "#{firstname} #{lastname}"
   end
+
+  def to_param
+    username
+  end
 end
