@@ -55,7 +55,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to members_url,
-                    notice: 'Member was successfully destroyed.'
+                    notice: 'Profile was successfully deleted.'
       end
       format.json { head :no_content }
     end
