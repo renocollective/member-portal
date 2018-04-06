@@ -1,20 +1,37 @@
-<div class = "row">
-  <div class = "col-sm-12">
-    <h1>Conversations</h1>
+<div class="container" id = "conversations">
+  <div class = "row header">
+    <div class = "col-md-12">
+      <h1>Conversations <%= link_to 'Start New Conversation', new_post_path, class: 'btn btn-primary float-right' %></h1>
+    </div>
   </div>
-</div>
-<div class = "row">
-  <div class = "col-sm-12">
-    <%= link_to 'Start New Conversation', new_post_path %>
-    <br>
-    <h6> Conversation Categories </h6>
-    <%= render 'shared/nav' %>
-  </div>
-  <div class = "col-10">
-    <% @posts.each do |post| %>
-      <h1><%= link_to post.title, post %></h1>
-      <h6>Posted by <%= post.member.firstname %> <%= post.member.lastname %></h6>
-      <p><%= post.content %></p>
-    <% end %>
+  <div class = "row convos">
+    <div class = "col-sm-2">
+       <%= render 'shared/categories' %>
+    </div>
+    <div class = "col-sm-10">
+      <% @posts.each do |post| %>
+      <div class="card conversation">
+        <div class="card-body">
+          <div class = "author">
+            <div class = "author-photo float-left">
+            <% if post.member.avatar.url %>
+              <img class="rounded-circle" src="<%= post.member.avatar.url %>" alt="profile image" width="35" height="35">
+            <% else %>
+              <%= image_tag("default-avatar.jpeg", size: "35x35", class: "rounded-circle", alt: "Edit Entry") %>
+            <% end %>
+          </div>
+            <div class = "author-meta">
+              <h6 class = "name"><%= link_to post.member.firstname + ' '  + post.member.lastname, post.member %></h6>
+              <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <h5 class="card-title"><%= link_to post.title, post %></h5>
+          <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
+          <p class="card-text read-more"><%= link_to 'Read more &rarr;'.html_safe, post %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>

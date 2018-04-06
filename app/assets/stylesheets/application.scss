@@ -145,12 +145,17 @@ $white: #FFF;
 
  }
 
- @import 'bootstrap';
- @import 'variables';
- @import 'home';
- @import 'components/mixins';
- @import 'components/page';
- @import 'components/form';
- @import 'components/header';
- @import 'components/member';
- @import 'components/sign-in';
+@import 'bootstrap';
+@import 'global';
+@import 'variables';
+@import 'home';
+@import 'members';
+@import 'conversations';
+@import 'components/mixins';
+@import 'components/page';
+@import 'components/conversation';
+@import 'components/form';
+@import 'components/header';
+@import 'components/member';
+@import 'components/sign-in';
+@import 'components/skills';

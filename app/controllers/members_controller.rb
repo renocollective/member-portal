@@ -78,7 +78,7 @@ class MembersController < ApplicationController
       :firstname, :instagram, :interests,
       :lastname, :linkedin, :location,
       :password, :password_confirmation, :phone,
-      :slack, :twitter, :username,
+      :slack, :twitter, :username, :title,
       :website_name, :website_url, :work_pattern
     )
   end

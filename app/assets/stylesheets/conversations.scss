@@ -1,0 +1,58 @@
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.post-conversation {
+  text-align: center;
+
+  a {
+    color: #3097D1;
+    font-size: 12px;
+  }
+
+  a:hover {
+    color: #282c34;
+  }
+}
+
+.read-more {
+  text-align: right;
+
+  a {
+    color: #3097D1;
+    font-size: 12px;
+  }
+
+  a:hover {
+    color: #282c34;
+  }
+}
+
+a {
+  color: #282c34;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3097D1;
+  text-decoration: none;
+}
+
+
+.conversation .card-text {
+  font-size: 14px;
+}
+
+.conversation .card-title {
+  font-size: 20px;
+}
+
+
+#conversations {
+
+  .convos {
+    margin-top: 20px;
+  }
+
+
+}

@@ -68,28 +68,41 @@
       </div>
 
       <div class="mb-3">
+        <label for="title">Title/Role</label>
+        <%= form.text_field :title, class: "form-control", placeholder: "Freelancer" %>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="company">Company</label>
+        <%= form.text_field :company, class: "form-control", placeholder: "Reno Collective" %>
+      </div>
+
+
+
+      <div class="mb-3">
         <label for="email">Email</label>
         <%= form.text_field :email, class: "form-control", placeholder: "you@example.com" %>
       </div>
 
       <div class="mb-3">
-        <label for="email">Website</label>
+        <label for="website">Website</label>
         <%= form.text_field :website_url, class: "form-control", placeholder: "http://yourwebsite.com" %>
       </div>
 
       <div class="mb-3">
-        <label for="address">Interests</label>
+        <label for="interests">Interests</label>
         <%= form.text_field :interests, class: "form-control", placeholder: "Running, programming, knitting" %>
       </div>
 
       <div class="mb-3">
-        <label for="address2">What do you do?</label>
+        <label for="activities">What do you do?</label>
         <%= form.text_field :activities, class: "form-control", placeholder: "Programmer" %>
       </div>
 
       <div class="row">
         <div class="col-md-5 mb-3">
-          <label for="country">Work Pattern</label>
+          <label for="work-pattern">Work Pattern</label>
           <select class="custom-select d-block w-100" id="workpattern">
             <option value="">Choose...</option>
             <option>Freelancer</option>

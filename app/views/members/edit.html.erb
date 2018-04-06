@@ -1,8 +1,12 @@
 
-<% if @member == current_member %>
-  <%= render 'form', member: @member %>
-<% else %>
-  <p>Sorry but it's bad manners to another user's profile :)</p>
-<% end %>
+<div class="container">
 
-<%= link_to 'Back', members_path %>
+  <% if @member == current_member %>
+    <%= render 'form', member: @member %>
+  <% else %>
+    <p>Sorry but it's bad manners to another user's profile :)</p>
+  <% end %>
+
+  <%= link_to 'Back', members_path %>
+
+</div>

@@ -1,0 +1,41 @@
+.conversation {
+
+  .author {
+    margin-bottom: 20px;
+  }
+
+  .author-photo {
+    margin-right: 10px;
+  }
+
+  h6 {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .name {
+    padding-top: 1px;
+    font-weight: bold;
+    margin-bottom: 3px;
+
+    a {
+      color: #282c34;
+      font-size: 13px;
+    }
+
+    a:hover {
+      color: #3097D1;
+    }
+  }
+
+  .edit-meta {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    a {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 12px;
+    }
+  }
+
+
+}
