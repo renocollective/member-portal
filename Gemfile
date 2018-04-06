@@ -28,7 +28,7 @@ end
 group :development, :test do
   gem 'bundler-audit', '~> 0.6.0'
   gem 'byebug', '~> 10.0.2', platforms: %i[mri mingw x64_mingw]
-  gem 'capybara', '~> 2.18'
+  gem 'capybara', '~> 3.0'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.8.7'
   gem 'guard-minitest', '~> 2.4.6'
