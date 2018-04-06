@@ -23,7 +23,7 @@
         <% end %>
       </div>
         <div class = "author-meta">
-          <h6 class = "name"><%= link_to @member.fullname, @post.member %></h6>
+          <h6 class = "name"><%= link_to @post.member.fullname, @post.member %></h6>
           <h6 class = "posted-time"><%= time_ago_in_words(@post.created_at) %> ago</h6>
         </div>
       </div>
