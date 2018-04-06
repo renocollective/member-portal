@@ -20,7 +20,7 @@ script:
   - bundle exec rails bundle:audit
   - bundle exec license_finder --quiet
   - bundle exec rubocop
-  - bundle exec rails test
+  - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 sudo: false

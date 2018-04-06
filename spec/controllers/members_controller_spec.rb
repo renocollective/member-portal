@@ -28,7 +28,7 @@ RSpec.describe MembersController, type: :controller do
     }
     before_count = Member.count
     post :create, params: params
-    expect(flash[:notice]).to eq('Member created.')
+    expect(flash[:notice]).to eq('Profile created.')
     member = Member.last
     expect(response).to redirect_to(member_path(member))
     expect(Member.count).to eq(before_count + 1)
