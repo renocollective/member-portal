@@ -80,7 +80,8 @@ to display a collection of resources in an HTML table.
             [namespace, resource],
             class: "text-color-red",
             method: :delete,
-            data: { confirm: t("administrate.actions.confirm") }
+            data: { confirm: "Deleting this category will delete all posts
+              associated with the category. Are you sure?" }
           ) if show_action? :destroy, resource %></td>
         <% end %>
       </tr>
