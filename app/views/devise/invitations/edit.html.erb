@@ -3,8 +3,12 @@
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :invitation_token, readonly: true %>
+  
+  <p><%= label_tag("member[username]", "Username") %> <br />
+  <%= text_field_tag("member[username]") %> </p>
 
   <% if f.object.class.require_password_on_accepting %>
+
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
 
