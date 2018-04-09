@@ -35,14 +35,14 @@ RSpec.describe MembersController, type: :controller do
   end
 
   it 'should get edit a member' do
-    get :edit, params: { id: member.id }
+    get :edit, params: { username: member.username }
     expect(response).to have_http_status(200)
   end
 
   it 'should update a logged in member' do
     authenticate_member(member)
-    patch :update, params: { id: member.id, member: {} }
-    expect(response).to have_http_status(200)
+    patch :update, params: { username: member.username, member: {} }
+    expect(response).to redirect_to(member_path(member))
   end
 
   it 'should destroy a member' do
@@ -50,7 +50,7 @@ RSpec.describe MembersController, type: :controller do
     authenticate_member(admin)
     member.touch
     before_count = Member.count
-    delete :destroy, params: { id: member.id }
+    delete :destroy, params: { username: member.username }
     expect(Member.count).to eq(before_count - 1)
     expect(response).to redirect_to(members_url)
   end
@@ -60,7 +60,7 @@ RSpec.describe MembersController, type: :controller do
     authenticate_member(member)
     member.touch
     before_count = Member.count
-    delete :destroy, params: { id: member.id }
+    delete :destroy, params: { username: member.username }
     expect(Member.count).to eq(before_count)
     expect(response).to redirect_to(members_url)
     expect(member).to be_persisted

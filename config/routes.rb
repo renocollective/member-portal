@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     invitations: 'invitations'
   }
 
-  resources :members
+  resources :members, param: :username
   root to: 'home#index'
 
   resources :posts do
