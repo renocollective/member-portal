@@ -9,8 +9,8 @@ class InvitationsController < Devise:: InvitationsController
   private
 
   def update_resource_params
-    params.require(:member).permit(:username, :password,
-                                   :password_confirmation,
+    params.require(:member).permit(:username, :firstname, :lastname,
+                                   :password, :password_confirmation,
                                    :invitation_token)
   end
 end
