@@ -42,7 +42,7 @@ RSpec.describe MembersController, type: :controller do
   it 'should update a logged in member' do
     authenticate_member(member)
     patch :update, params: { id: member.id, member: {} }
-    expect(response).to redirect_to(member_path(member))
+    expect(response).to have_http_status(200)
   end
 
   it 'should destroy a member' do
