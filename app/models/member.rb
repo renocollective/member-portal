@@ -12,6 +12,7 @@ class Member < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
+  validates :firstname, :lastname, presence: true
 
   def fullname
     "#{firstname} #{lastname}"

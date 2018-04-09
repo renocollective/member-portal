@@ -1,26 +1,30 @@
-<h2 style="text-align:center"><%= t 'devise.invitations.edit.header' %></h2>
+<div class="container-fluid">
+  <div class = "col-md-6 offset-md-3">
+    <h2 style="text-align:center; margin-top:30px"><%= t 'devise.invitations.edit.header' %></h2>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token, readonly: true %>
+    <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :invitation_token, readonly: true %>
 
-  <p><%= label_tag("member[username]", "Username") %> <br />
-  <%= text_field_tag("member[username]") %> </p>
+      <p><%= label_tag("member[username]", "Username") %> <br />
+      <%= text_field_tag("member[username]") %> </p>
 
-  <p><%= label_tag("member[firstname]", "First Name") %> <br />
-  <%= text_field_tag("member[firstname]") %> </p>
+      <p><%= label_tag("member[firstname]", "First Name") %> <br />
+      <%= text_field_tag("member[firstname]") %> </p>
 
-  <p><%= label_tag("member[lastname]", "Last Name") %> <br />
-  <%= text_field_tag("member[lastname]") %> </p>
+      <p><%= label_tag("member[lastname]", "Last Name") %> <br />
+      <%= text_field_tag("member[lastname]") %> </p>
 
-  <% if f.object.class.require_password_on_accepting %>
+      <% if f.object.class.require_password_on_accepting %>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+      <p><%= f.label :password %><br />
+      <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-  <% end %>
+      <p><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></p>
+      <% end %>
 
-  <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
-<% end %>
+      <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
+    <% end %>
+  </div>
+</div>
