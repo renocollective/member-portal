@@ -33,17 +33,17 @@ RSpec.describe PostsController, type: :controller do
   end
 
   it 'should show post' do
-    get :show, params: { id: post1.id }
+    get :show, params: { slug: post1.slug }
     expect(response).to have_http_status(200)
   end
 
   it 'should get edit' do
-    get :edit, params: { id: post1.id }
+    get :edit, params: { slug: post1.slug }
     expect(response).to have_http_status(200)
   end
 
   it 'should update post' do
-    patch :update, params: { id: post1.id, post: {} }
+    patch :update, params: { slug: post1.slug, post: {} }
     expect(response).to redirect_to(post_path(post1))
   end
 
@@ -51,7 +51,7 @@ RSpec.describe PostsController, type: :controller do
     post2 = create(:post)
     post1.touch
     before_count = Post.count
-    delete :destroy, params: { id: post1.id }
+    delete :destroy, params: { slug: post1.slug }
     expect(Post.count).to eq(before_count - 1)
     expect(response).to redirect_to(posts_path)
     expect(post2).to be_persisted

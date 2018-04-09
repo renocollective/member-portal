@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20180410052509) do
     t.datetime "updated_at", null: false
     t.bigint "member_id"
     t.bigint "category_id"
+    t.string "slug"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["member_id"], name: "index_posts_on_member_id"
   end
