@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     root to: 'posts#index'
   end
 
-  devise_for :members
+  devise_for :members, controllers: {
+    invitations: 'invitations'
+  }
 
   resources :members
   root to: 'home#index'
