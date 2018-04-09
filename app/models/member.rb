@@ -2,8 +2,8 @@
 
 # ActiveRecord Member user
 class Member < ApplicationRecord
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :confirmable, :database_authenticatable, :registerable,
@@ -12,6 +12,7 @@ class Member < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
+  validates :firstname, :lastname, presence: true
 
   def fullname
     "#{firstname} #{lastname}"
