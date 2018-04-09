@@ -10,8 +10,8 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
 
-  validates :email, presence: true
-  validates :username, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
   def fullname
     "#{firstname} #{lastname}"
