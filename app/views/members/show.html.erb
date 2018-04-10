@@ -3,11 +3,7 @@
     <div class = "col-md-4">
       <div class="card text-center">
         <div class="card-body">
-          <% if @member.avatar.url %>
           <img class="rounded-circle" src="<%= @member.avatar.url %>" alt="profile image" width="140" height="140">
-          <% else %>
-            <%= image_tag("default-avatar.jpeg", size: "140x140", class: "rounded-circle") %>
-          <% end %>
           <h5 class="card-title"> <%= @member.firstname %> <%= @member.lastname %> </h5>
           <p class="card-text">
             <small><%= @member.location %></small>

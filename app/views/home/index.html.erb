@@ -24,11 +24,7 @@
           <div class="card-body">
             <div class = "author">
               <div class = "author-photo float-left">
-              <% if post.member.avatar.url %>
                 <img class="rounded-circle" src="<%= post.member.avatar.url %>" alt="profile image" width="35" height="35">
-              <% else %>
-                <%= image_tag("default-avatar.jpeg", size: "35x35", class: "rounded-circle", alt: "Edit Entry") %>
-              <% end %>
             </div>
               <div class = "author-meta">
                 <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>
