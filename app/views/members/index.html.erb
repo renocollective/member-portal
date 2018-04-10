@@ -8,11 +8,9 @@
 
     <div class = "col-md-2">
       <div>
-        <a href="#" class="badge badge-skill">Videography</a> <br />
-        <a href="#" class="badge badge-skill">Javascript</a> <br />
-        <a href="#" class="badge badge-skill">Startups</a> <br />
-        <a href="#" class="badge badge-skill">Marketing</a> <br />
-        <a href="#" class="badge badge-skill">Coworking</a> <br />
+        <% @skills.each do |skill| %>
+          <%= link_to skill.name, members_path(skill: skill.name), class: 'badge badge-skill' %>
+        <% end %>
       </div>
     </div>
     <div class = "col-md-10">
@@ -41,10 +39,9 @@
 
                     <hr />
                     <div>
-                      <a href="#" class="badge badge-skill">Videography</a>
-                      <a href="#" class="badge badge-skill">Javascript</a>
-                      <a href="#" class="badge badge-skill">Startups</a>
-                      <a href="#" class="badge badge-skill">Marketing</a>
+                      <% member.skill_list.each do |tag| %>
+                        <a href="#" class="badge badge-skill"><%= tag %></a>
+                      <% end %>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'administrate', '~> 0.9.0'
 gem 'bootstrap', '~> 4.0.0'
 gem 'carrierwave', '~> 1.2.2'
