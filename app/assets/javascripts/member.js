@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$( document ).on('turbolinks:load', function() {
 
   $('.skill-tags').selectize({
     delimiter: ',',
@@ -10,5 +10,5 @@ $(document).ready(function() {
       }
     }
   });
-  
+
 });
