@@ -21,11 +21,7 @@
                 <div class="card text-center member-profile">
                   <div class="card-body">
                     <a href = "<%= member_path(member) %>">
-                      <% if member.avatar.url %>
-                        <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="100" height="100">
-                      <% else %>
-                        <%= image_tag("default-avatar.jpeg", size: "100x100", class: "rounded-circle", alt: "Edit Entry") %>
-                      <% end %>
+                      <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="100" height="100">
                     </a>
                     <h5 class="card-title member-name"><%= link_to member.firstname? ? member.fullname : member.username, member %></h5>
 
