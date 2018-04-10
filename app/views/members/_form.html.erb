@@ -174,7 +174,7 @@
           </div>
         </div>
         <hr class="mb-4">
-        <%= form.submit "Save", class: 'btn btn-primary btn-lg btn-block' %>
+
 
     </div>
     <div class="col-md-4">
@@ -183,7 +183,11 @@
 
        <hr class="mb-4">
 
-       <%= form.text_field :skill_list, value: form.object.skill_list.to_s %>
+       <%= form.text_area :skill_list, value: form.object.skill_list.to_s, class: 'skill-tags'  %>
+
+        <hr class="mb-4">
+
+        <%= form.submit "Save", class: 'btn btn-primary btn-lg btn-block' %>
     </div>
   </div>
   <% end %>

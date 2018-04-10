@@ -391,7 +391,7 @@ DEPENDENCIES
   rspec-rails (~> 3.7)
   rubocop (~> 0.54.0)
   sass-rails (~> 5.0.7)
-  selectize-rails
+  selectize-rails (~> 0.12.4.1)
   selenium-webdriver (~> 3.11.0)
   simplecov (~> 0.16.1)
   travis (~> 1.8.8)
