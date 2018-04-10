@@ -8,7 +8,14 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @skills = Member.tag_counts_on(:skills)
+
+    if params[:skill].blank?
+      @members = Member.all.order('lastname DESC')
+    else
+      @skill = ActsAsTaggableOn::Tag.find_by_name(params[:skill])
+      @members = Member.tagged_with(@skill.name)
+    end
   end
 
   # GET /members/1
@@ -79,7 +86,7 @@ class MembersController < ApplicationController
       :lastname, :linkedin, :location,
       :password, :password_confirmation, :phone,
       :slack, :twitter, :username, :title,
-      :website_name, :website_url, :work_pattern
+      :website_name, :website_url, :work_pattern, :skill_list
     )
   end
 end

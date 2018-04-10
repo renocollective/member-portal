@@ -4,8 +4,8 @@
 class Member < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  acts_as_taggable_on :skills
+
   devise :invitable, :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader

@@ -16,11 +16,9 @@
             <%= @member.company %>
           </p>
           <div>
-            <a href="#" class="badge badge-skill">Videography</a>
-            <a href="#" class="badge badge-skill">Javascript</a>
-            <a href="#" class="badge badge-skill">Startups</a>
-            <a href="#" class="badge badge-skill">Marketing</a>
-            <a href="#" class="badge badge-skill">Coworking</a>
+            <% @member.skill_list.each do |skill| %>
+              <%= link_to skill, members_path(skill: skill), class: 'badge badge-skill' %>
+            <% end %>
           </div>
           <ul>
             <% if @member.website_url? %>
