@@ -73,6 +73,6 @@ class MemberDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(member)
-    member.lastname
+    member.fullname
   end
 end

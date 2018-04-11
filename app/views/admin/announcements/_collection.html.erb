@@ -18,7 +18,7 @@ to display a collection of resources in an HTML table.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
 
-<table style="text-align:left" aria-labelledby="<%= table_title %>">
+<table aria-labelledby="<%= table_title %>">
   <thead>
     <tr>
       <% collection_presenter.attribute_types.each do |attr_name, attr_type| %>
@@ -27,8 +27,7 @@ to display a collection of resources in an HTML table.
         cell-label--<%= collection_presenter.ordered_html_class(attr_name) %>"
         scope="col"
         role="columnheader"
-        aria-sort="<%= sort_order(collection_presenter.ordered_html_class(attr_name)) %>"
-        style="text-align:left">
+        aria-sort="<%= sort_order(collection_presenter.ordered_html_class(attr_name)) %>">
         <%= link_to(sanitized_order_params.merge(
           collection_presenter.order_params_for(attr_name)
         )) do %>
@@ -63,17 +62,17 @@ to display a collection of resources in an HTML table.
           <% end %>
           >
         <% collection_presenter.attributes_for(resource).each do |attribute| %>
-          <td style="text-align:left" class="cell-data cell-data--<%= attribute.html_class %>">
+          <td class="cell-data cell-data--<%= attribute.html_class %>">
             <% if show_action? :show, resource -%>
-              <!-- <a href="<%= polymorphic_path([namespace, resource]) -%>"
+              <a href="<%= polymorphic_path([namespace, resource]) -%>"
                  class="action-show"
-                 > -->
+                 >
                 <%= render_field attribute %>
               </a>
             <% end -%>
           </td>
         <% end %>
-        
+
         <% if valid_action? :edit, collection_presenter.resource_name %>
           <td><%= link_to(
             t("administrate.actions.edit"),
@@ -88,8 +87,7 @@ to display a collection of resources in an HTML table.
             [namespace, resource],
             class: "text-color-red",
             method: :delete,
-            data: { confirm: "Deleting this category will delete all posts
-              associated with the category. Are you sure?" }
+            data: { confirm: t("administrate.actions.confirm") }
           ) if show_action? :destroy, resource %></td>
         <% end %>
       </tr>
