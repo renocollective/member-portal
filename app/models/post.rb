@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   belongs_to :member
   belongs_to :category
   has_many :comments, dependent: :destroy
-  before_create :create_slug
+  after_create :create_slug
 
   validates :title, :content, :category_id, presence: true
   mount_uploader :image, PostImageUploader
@@ -15,6 +15,7 @@ class Post < ApplicationRecord
   end
 
   def create_slug
-    self.slug = title.parameterize
+    self.slug = [title.parameterize, id].join('-')
+    save
   end
 end
