@@ -60,7 +60,7 @@ class PostsController < ApplicationController
 
   def post_params
     params.fetch(:post, {}).permit(
-      :title, :content, :member_id, :category_id
+      :title, :content, :member_id, :category_id, :image
     )
   end
 

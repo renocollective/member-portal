@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   before_create :create_slug
 
   validates :title, :content, :category_id, presence: true
+  mount_uploader :image, PostImageUploader
 
   def to_param
     slug

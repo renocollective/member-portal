@@ -18,7 +18,9 @@
   <%= form.text_field :title, placeholder: 'Type the post title here' %><br>
   <%= form.label :content %><br>
   <%= form.text_area :content, size: '60x12', placeholder: 'Type the post text here' %><br>
-
+  <%= form.label :image %><br>
+  <%= form.file_field :image %><br>
+  <br>
   <%= form.submit %>
 
 <% end %>

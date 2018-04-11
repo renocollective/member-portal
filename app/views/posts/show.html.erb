@@ -23,7 +23,7 @@
           <h6 class = "posted-time"><%= time_ago_in_words(@post.created_at) %> ago</h6>
         </div>
       </div>
-
+      <%= image_tag @post.image_url.to_s %>
       <p><%= simple_format(@post.content).gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %></p>
 
       <hr class="mb-4">
