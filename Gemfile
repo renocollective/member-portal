@@ -24,7 +24,7 @@ gem 'uglifier', '~> 4.1.8'
 group :development do
   gem 'listen', '~> 3.1.5'
   gem 'travis', '~> 1.8.8'
-  gem 'web-console', '~> 3.5.1'
+  gem 'web-console', '~> 3.6.0'
 end
 
 group :development, :test do
