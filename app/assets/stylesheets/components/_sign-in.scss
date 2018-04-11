@@ -2,3 +2,24 @@
   @include make-container();
   @include columns('3-213');
 }
+
+.questions {
+  padding-top: .2rem;
+}
+
+.contact-info {
+  color: white;
+}
+
+.wrapper_skinny {
+  width: 35%;
+  margin: 0 auto;
+
+  a {
+    color: white;
+  }
+
+  img {
+    transform: scale(.5);
+  }
+}

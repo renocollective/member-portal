@@ -16,3 +16,5 @@ node_modules
 public/uploads
 tmp
 yarn-error.log
+.DS_Store
+db_data

@@ -5,5 +5,6 @@ FactoryBot.define do
     title 'MyString'
     content 'MyText'
     member
+    category
   end
 end

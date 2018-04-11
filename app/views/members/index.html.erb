@@ -1,34 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="container" id="members">
+  <div class = "row">
+    <div class = "col-12">
+      <h1>Members</h1>
+    </div>
+  </div>
+  <div class = "row">
 
-<div class="container">
-  <h1>Members</h1>
-
-
-  <% if member_signed_in? %>
-    You are signed in!
-    <br/>
-    <%=link_to 'Logout', destroy_member_session_path, method: :delete %>
-    <br/>
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @members.each do |member| %>
-          <tr>
-            <td><%= member.username%></td>
-            <td><%= link_to 'View Profile', member %></td>
-          </tr>
+    <div class = "col-md-2">
+      <div>
+        <% @skills.each do |skill| %>
+          <%= link_to skill.name, members_path(skill: skill.name), class: 'badge badge-skill' %>
         <% end %>
-      </tbody>
-    </table>
+      </div>
+    </div>
+    <div class = "col-md-10">
+      <div class = "container-fluid">
+        <div class = "row">
+          <% @members.each_with_index do |member, index| %>
+              <div class = "col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card text-center member-profile">
+                  <div class="card-body">
+                    <a href = "<%= member_path(member) %>">
+                      <img class="rounded-circle" src="<%= member.avatar.url %>" alt="profile image" width="100" height="100">
+                    </a>
+                    <h5 class="card-title member-name"><%= link_to member.firstname? ? member.fullname : member.username, member %></h5>
 
-  <% else %>
-    <%= link_to 'Login', new_member_session_path %>
-    <br/>
-    <%= link_to 'Sign Up',  new_member_registration_path %>
-  <% end %>
+                    <p class="card-text member-bio">
+                       <% if member.title? && member.company %>
+                      <%= member.title %> at <%= member.company %>
+                       <% else %>
+                       &nbsp;
+                       <% end %>
+                    </p>
+
+                    <hr />
+                    <div>
+                      <% member.skill_list.each do |tag| %>
+                        <a href="#" class="badge badge-skill"><%= tag %></a>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

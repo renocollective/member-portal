@@ -9,54 +9,12 @@
 
   <body>
     <header>
-
-      <nav class="navbar navbar-expand-lg">
-
-        <%= link_to image_tag("brand-logo.png", border: 0), members_path, class: 'brand-logo' %>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item <%= 'active' if current_page?(root_path) %>">
-              <%= link_to 'Home', root_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item <%= 'active' if current_page?(members_path) %>">
-              <%= link_to 'Members', members_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item <%= 'active' if current_page?(posts_path) %>">
-              <%= link_to 'Posts', posts_path, class: 'nav-link' %>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <ul class="navbar-nav">
-            <% if member_signed_in? %>
-              <li class="nav-item">
-                <%= link_to current_member.email, member_path(current_member), class: 'nav-link' %>
-              </li>
-              <% if current_member.admin? %>
-                <li class="nav-item">
-                  <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
-                </li>
-              <% end %>
-              <li class="nav-item">
-                <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-
+      <% if member_signed_in? %>
+        <%= render 'layouts/navbar' %>
+      <% end %>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= yield %>
+
   </body>
 </html>

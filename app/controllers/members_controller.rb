@@ -3,11 +3,19 @@
 # Membership controller
 class MembersController < ApplicationController
   before_action :set_member, only: %i[show edit update destroy]
+  before_action :require_admin!, only: :destroy
 
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    @skills = Member.tag_counts_on(:skills)
+
+    if params[:skill].blank?
+      @members = Member.all.order('lastname DESC')
+    else
+      @skill = ActsAsTaggableOn::Tag.find_by_name(params[:skill])
+      @members = Member.tagged_with(@skill.name)
+    end
   end
 
   # GET /members/1
@@ -28,7 +36,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member created.' }
+        format.html { redirect_to @member, notice: 'Profile created.' }
       else
         format.html { render :new }
       end
@@ -40,7 +48,7 @@ class MembersController < ApplicationController
   def update
     respond_to do |format|
       if @member == current_member && @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Member updated.' }
+        format.html { redirect_to @member, notice: 'Profile updated.' }
       else
         format.html { render :edit }
       end
@@ -54,7 +62,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to members_url,
-                    notice: 'Member was successfully destroyed.'
+                    notice: 'Profile was successfully deleted.'
       end
       format.json { head :no_content }
     end
@@ -63,7 +71,11 @@ class MembersController < ApplicationController
   private
 
   def set_member
-    @member = Member.find(params[:id])
+    @member = Member.find_by_username(params[:username])
+  end
+
+  def require_admin!
+    redirect_to members_url, notice: 'Unauthorized' unless current_member.admin?
   end
 
   def member_params
@@ -73,8 +85,8 @@ class MembersController < ApplicationController
       :firstname, :instagram, :interests,
       :lastname, :linkedin, :location,
       :password, :password_confirmation, :phone,
-      :slack, :twitter, :username,
-      :website_name, :website_url, :work_pattern
+      :slack, :twitter, :username, :title,
+      :website_name, :website_url, :work_pattern, :skill_list
     )
   end
 end

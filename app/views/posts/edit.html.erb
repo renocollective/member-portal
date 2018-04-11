@@ -1,6 +1,4 @@
 <div class = "container">
-  <% controller.redirect_to '/members/sign_in' unless member_signed_in?  %>
-  <h1>Edit Post</h1>
+  <h1>Edit Conversation</h1>
   <%= render 'form', post: @post %>
-  <%= link_to 'Back', root_path %>
 </div>

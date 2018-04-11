@@ -1,10 +1,7 @@
 ## Types of changes
 
-What types of changes does your code introduce?
+What types of changes does your code introduce (new feature, bug fix, front end, other)?
 
-* [ ] New feature (adds a new functionality)
-* [ ] Bug fix (fixes an issue/bug)
-* [ ] Other
 
 ### Description
 

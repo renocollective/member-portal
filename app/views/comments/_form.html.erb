@@ -1,4 +1,8 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
+  <div class="form-group">
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Post comment', class: 'btn btn-primary' %>
+  </div>
 <% end %>

@@ -1,0 +1,46 @@
+<nav id="main-nav" class="navbar navbar-expand-lg">
+
+<%= link_to image_tag("rc_atom.png", border: 0), root_path, class: 'brand-logo' %>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <ul class="navbar-nav mr-auto">
+   <li class="nav-item <%= 'active' if current_page?(root_path) %>">
+     <%= link_to 'Home', root_path, class: 'nav-link' %>
+   </li>
+   <li class="nav-item <%= 'active' if current_page?(members_path) %>">
+     <%= link_to 'Members', members_path, class: 'nav-link' %>
+   </li>
+   <li class="nav-item <%= 'active' if current_page?(posts_path) %>">
+     <%= link_to 'Conversations', posts_path, class: 'nav-link' %>
+   </li>
+ </ul>
+
+ <ul class="navbar-nav">
+   <% if member_signed_in? %>
+   <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <img class="rounded-circle" src="<%= current_member.avatar.url %>" width="25" height="25">
+       <%= current_member.username %>
+     </a>
+     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+       <%= link_to 'Your Profile', member_path(current_member), class: 'nav-link' %>
+       <% if current_member.admin? %>
+       <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
+       <% end %>
+       <div class="dropdown-divider"></div>
+       <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
+     </div>
+   </li>
+   <% end %>
+ </ul>
+
+ <form class="form-inline my-2 my-lg-0" id="member-search">
+   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+ </form>
+</div>
+</nav>
+<br>

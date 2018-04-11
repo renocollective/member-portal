@@ -1,40 +1,54 @@
-<div class="sign-in">
-  <div aria-label="Sign in Form" tabindex="0">
-    <h2>Sign In</h2>
-    <p>Rem debitis est id non. Officiis nostrum libero non in molestias minus est optio. Sequi iure id beatae consectetur aut voluptatem. Quidem non ducimus voluptatem praesentium doloremque molestiae dicta id. Quia sed suscipit animi debitis sapiente nostrum.</p>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <p class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </p>
+<body>
+  <div id="background">
+    <header class ="cf">
+      <div class="wrapper_wide">
+        <a href="#" id="logo">Member<span>Portal</span></a>
 
-        <p class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </p>
+      </div>
+    </header>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end -%>
+    <div class="wrapper_skinny">
+        <%= image_tag("rc_white.png") %>
+        <% if alert %>
+          <p class="alert" style="color:white"><%= alert %></p>
+        <% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <p class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </p>
 
-        <p class="actions">
-          <%= f.submit "Sign in" %>
-        </p>
-      <% end %>
+          <p class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </p>
 
-      <%= render "devise/shared/links" %>
-    </div>
-    <div aria-label="Contact Information" tabindex="0">
-      <strong>Reno Collective</strong>
-      <p>
-        1515 Plumas St.<br />
-        Reno, NV 89509<br />
-        (775) 391-0195
-      </p>
-      <strong>Front Desk</strong>
-      <p><a href="mailto:info@renocollective.com">info@renocollective.com</a></p>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <p class="actions">
+            <%= f.submit "Sign in", class: "button_highlight button" %>
+          </p>
+        <% end %>
+
+        <div class="questions">
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "Log in", new_session_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+          <% end -%>
+
+          <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+            <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+          <% end -%>
+        </div>
+      </div>
     </div>
   </div>
+</body>
