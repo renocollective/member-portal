@@ -2,6 +2,7 @@
 
 require 'administrate/base_dashboard'
 
+# category dashboard fields
 class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -49,7 +50,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(category)
-  #   "Category ##{category.id}"
-  # end
+  def display_resource(category)
+    category.name
+  end
 end

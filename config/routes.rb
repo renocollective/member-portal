@@ -7,13 +7,13 @@ Rails.application.routes.draw do
     resources :announcements
     root to: 'announcements#index'
 
-    resources :members
+    resources :members, param: :username
     root to: 'members#index'
 
     resources :categories
     root to: 'categories#index'
 
-    resources :posts
+    resources :posts, param: :slug
     root to: 'posts#index'
   end
 
