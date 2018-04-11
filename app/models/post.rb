@@ -5,6 +5,15 @@ class Post < ApplicationRecord
   belongs_to :member
   belongs_to :category
   has_many :comments, dependent: :destroy
+  before_create :create_slug
 
   validates :title, :content, :category_id, presence: true
+
+  def to_param
+    slug
+  end
+
+  def create_slug
+    self.slug = title.parameterize
+  end
 end

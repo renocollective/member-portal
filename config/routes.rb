@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :members, param: :username
   root to: 'home#index'
 
-  resources :posts do
+  resources :posts, param: :slug do
     resources :comments
     root to: 'posts#index'
   end
