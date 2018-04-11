@@ -78,13 +78,16 @@ To successfully run this command, you will need to have bundler installed. To in
 gem install bundler
 ```
 
-For the application to successfully run, you will need to create a .env.local file. Copy and paste the text in the .env file into the new .env.local file.
+For the application to successfully run, you will need to create a .env.local file. Copy and paste the text in the .env file into the new .env.local file or just run:
 
+```shell
+bundle exec rake setupenv
+```
 
 Next, run:
 ```shell
-rails db:setup
-rails db:migrate
+bundle exec rails db:setup
+bundle exec rails db:migrate
 ```
 
 To start and run the rails application:
