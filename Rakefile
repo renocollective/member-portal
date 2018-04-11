@@ -5,14 +5,15 @@
 # be available to Rake.
 
 require_relative 'config/application'
-require 'bundler/audit/task'
-require 'rubocop/rake_task'
 
 Rails.application.load_tasks
 
-# Provide `bundle:audit` task
-Bundler::Audit::Task.new
+if %w[development test].include? Rails.env
+  require 'bundler/audit/task'
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new
 
-RuboCop::RakeTask.new
+  Bundler::Audit::Task.new
 
-task default: %i[rubocop spec]
+  task default: %i[rubocop spec]
+end
