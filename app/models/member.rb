@@ -15,7 +15,7 @@ class Member < ApplicationRecord
   validates :firstname, :lastname, presence: true
 
   def fullname
-    "#{firstname} #{lastname}"
+    firstname && lastname ? "#{firstname} #{lastname}" : username
   end
 
   def to_param
