@@ -27,3 +27,4 @@ Metrics/BlockLength:
 Style/FrozenStringLiteralComment:
   Exclude:
     - spec/**/*_spec.rb
+    - bin/*
