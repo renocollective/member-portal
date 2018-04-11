@@ -17,7 +17,7 @@
               <img class="rounded-circle" src="<%= post.member.avatar.url %>" alt="profile image" width="35" height="35">
           </div>
             <div class = "author-meta">
-              <h6 class = "name"><%= link_to post.member.firstname + ' '  + post.member.lastname, post.member %></h6>
+              <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>
               <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
             </div>
           </div>
