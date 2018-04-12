@@ -96,6 +96,11 @@ bundle exec rails db:setup
 bundle exec rails db:migrate
 ```
 
+Before we start the server, we will create our first admin user. This will ask you for information for your first user account that will have admin access. You can edit this user and grant other users admin privileges once the server has started.
+```shell
+bundle exec rake setupadmin
+```
+
 To start and run the rails application:
 ```shell
 rails s
