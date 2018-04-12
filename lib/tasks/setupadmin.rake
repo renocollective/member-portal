@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'io/console'
 
 desc 'Setup first admin user'
@@ -29,7 +30,7 @@ task setupadmin: [:environment] do
       name: 'Uncategorized'
     )
 
-    puts 'Your admin user has been created. You can sign in once the server is started!'
+    puts 'Your admin user has been created. You can sign in with this account.'
   else
     puts 'Users have already been created for this Member Portal.'
   end
