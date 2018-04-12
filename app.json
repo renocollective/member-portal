@@ -1,0 +1,9 @@
+{
+  "name": "Member Portal",
+  "description": "Open source member community software being developed in the open.",
+  "repository": "https://github.com/colinloretz/member-portal",
+  "keywords": ["ruby on rails"],
+  "scripts": {
+    "postdeploy": "rails db:migrate"
+  }
+}

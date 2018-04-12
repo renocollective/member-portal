@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+ruby '2.3.5'
 
 gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'administrate', '~> 0.9.0'
