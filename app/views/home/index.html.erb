@@ -51,7 +51,7 @@
             <hr class="mb-4">
             <h5 class="card-title"><%= link_to post.title, post %></h5>
             <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
-            <p class="card-text read-more"><%= link_to 'Read more &rarr;'.html_safe, post %></p>
+            <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
           </div>
         </div>
       <% end %>
@@ -63,7 +63,7 @@
     </div>
     <div class="col-sm-3">
       <% @announcements.each do |announcement| %>
-        <div class="alert alert-warning fade show" role="alert">
+        <div class="alert alert-warning fade show announcement" role="alert">
           <h5><%= announcement.title %></h5>
           <small>Posted <%= time_ago_in_words(announcement.created_at) %> ago</small>
           <p><%= announcement.content %></p>
