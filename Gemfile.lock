@@ -404,7 +404,7 @@ DEPENDENCIES
   simplecov (~> 0.16.1)
   travis (~> 1.8.8)
   turbolinks (~> 5.1.1)
-  uglifier (~> 4.1.8)
+  uglifier (~> 4.1.9)
   web-console (~> 3.6.0)
 
 RUBY VERSION
