@@ -10,28 +10,28 @@ RSpec.describe CommentsController, type: :controller do
     authenticate_member(member)
   end
 
-  # it 'should create comment' do
-  #   params = {
-  #     comment: {
-  #       content: 'comment content',
-  #       post_id: post1.id,
-  #       member_id: member.id
-  #     }
-  #   }
-  #   expect do
-  #     post :create, params: params, post_id: post1.id
-  #   end.to change { Comment.count }.by(1)
-  # end
+  xit 'should create comment' do
+    params = {
+      comment: {
+        content: 'comment content',
+        post_id: post1.id,
+        member_id: member.id
+      }
+    }
+    expect do
+      post :create, params: params, post_id: post1.id
+    end.to change { Comment.count }.by(1)
+  end
 
-  # it 'should update comment' do
-  #   patch :update, params: { id: post1.id, comment: {} }
-  #   expect(response).to redirect_to(post_path(post1))
-  # end
+  xit 'should update comment' do
+    patch :update, params: { id: post1.id, comment: {} }
+    expecct(response).to redirect_to(post_path(post1))
+  end
 
-  # it 'should destroy comment' do
-  #   comment1.touch
-  #   before_count = Comment.count
-  #   delete :destroy, params: { id: comment1.id }
-  #   expect(Comment.count).to eq(before_count - 1)
-  # end
+  xit 'should destroy comment' do
+    comment1.touch
+    before_count = Comment.count
+    delete :destroy, params: { id: comment1.id }
+    expect(Comment.count).to eq(before_count - 1)
+  end
 end
