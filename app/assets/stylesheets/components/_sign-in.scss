@@ -1,112 +1,96 @@
-body, html {
-  height: 100%;
-}
-
-.bg {
-    /* The image used */
-    background-image: image-url("background.jpg");
-
-    /* Full height */
+#sign-in-bg {
+  body, html {
     height: 100%;
+    background-image: image-url("background.jpg");
+  }
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  body {
+   height: 100%;
+   background-repeat: no-repeat;
+	 background-position: center center;
+  }
 }
 
 #sign-in-page {
-  $light: #EDEFF5;
-  $white: #FFF;
-
-  header {
-    padding: 1rem 0;
-    #logo {
-      float: left;
-      text-transform: lowercase;
-      font-weight: 600;
-      color: $white;
-      text-decoration: none;
-      font-size: 1.5rem;
-      padding-left: 1.2rem;
-      letter-spacing: .3rem;
-    }
-    nav {
-      float: right;
-      ul {
-        list-style: none;
-        margin: 0;
-        li {
-          display: inline;
-          margin-left: 2.5rem;
-          a {
-            color: $white;
-            text-decoration: none;
+    $light: #EDEFF5;
+    header {
+      padding: 1rem 0;
+      #logo {
+        float: left;
+        text-transform: lowercase;
+        font-weight: 600;
+        color: $white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding-left: 1.2rem;
+        letter-spacing: .3rem;
+      }
+      nav {
+        float: right;
+        ul {
+          list-style: none;
+          margin: 0;
+          li {
+            display: inline;
+            margin-left: 2.5rem;
           }
         }
+
       }
-
+      span {
+        font-weight: 100;
+        letter-spacing: .3rem;
+      }
     }
-    span {
-      font-weight: 100;
-      letter-spacing: .3rem;
+
+    a {
+      color: white;
     }
-  }
 
-  .field {
-    color: $white;
-    text-align: left;
-  }
 
-  h2 {
-    color: $white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing: 5px;
-  }
-
-  .button {
-    color: $white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 1rem;
-    outline: none;
-    border: none;
-  }
-
-  .button_highlight {
-    background: #51436d;
-    &:hover {
-      background: darken(#51436d, 7.5%)
+    img {
+      transform: scale(.5);
+      width: 75%;
     }
-  }
 
-  input[type="email"], input[type="text"], input[type="password"], textarea {
-      width: 100%;
-      height: 2.5rem;
-      background: $light;
-      border: 1px solid darken($light, 8.5%);
-      border-radius:  .35rem;
-      margin-top: .5rem;
-  }
-}
+    .wrapper_skinny {
+      width: 35%;
+      margin: 0 auto;
+    }
 
-.wrapper_skinny {
-  width: 35%;
-  margin: 0 auto;
+    .wrapper_wide {
+      width: 90%;
+      margin: 0 auto;
+    }
 
-  a {
-    color: white;
-  }
+    .field {
+      color: $white;
+      text-align: left;
+    }
 
-  img {
-    transform: scale(.5);
-    align: center;
-  }
-}
+    input[type="email"], input[type="text"], input[type="password"], textarea {
+        width: 100%;
+        height: 2.5rem;
+        background: $light;
+        border: 1px solid darken($light, 8.5%);
+        border-radius:  .35rem;
+        margin-top: .5rem;
+    }
 
-.wrapper_wide {
-  width: 90%;
-  margin: 0 auto;
+    .button {
+      color: $white;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 1rem;
+      outline: none;
+      border: none;
+      width: 100px;
+    }
+
+    .button_highlight {
+      background: #51436d;
+      &:hover {
+        background: darken(#51436d, 7.5%)
+      }
+    }
 }
