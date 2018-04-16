@@ -1,56 +1,89 @@
 <div class="container">
   <div class = "row">
-    <div class = "col-md-4">
-      <div class="card text-center">
+    <div class = "col-md-3">
+      <div class="card text-center member-profile">
         <div class="card-body">
-          <img class="rounded-circle" src="<%= @member.avatar.url %>" alt="profile image" width="140" height="140">
-          <h5 class="card-title"><%= @member.fullname %></h5>
+          <div>
+            <img class="rounded-circle" src="<%= @member.avatar.url %>" alt="profile image" width="125" height="125">
+          </div>
+          <h5 class="card-title member-name"><%= @member.fullname %></h5>
           <p class="card-text">
             <small><%= @member.location %></small>
           </p>
-          <p class="card-text">
-            <%= @member.company %>
+          <p class="card-text member-bio">
+            <% if @member.title? && @member.company %>
+              <%= @member.title %> at <%= @member.company %>
+            <% else %>
+              Member at Reno Collective
+            <% end %>
           </p>
+          <hr />
           <div>
             <% @member.skill_list.each do |skill| %>
               <%= link_to skill, members_path(skill: skill), class: 'badge badge-skill' %>
             <% end %>
           </div>
-          <ul>
-            <% if @member.website_url? %>
-            <li><%= link_to @member.website_url, @member.website_url, target: '_new' %></li>
-            <% end %>
-            <% if @member.linkedin? %>
-            <li><%= link_to 'linkedin', 'https://linkedin.com/' + @member.linkedin, target: '_new'  %></li>
-            <% end %>
-            <% if @member.facebook? %>
-            <li><%= link_to 'facebook', 'https://facebook.com/' + @member.facebook, target: '_new'  %></li>
-            <% end %>
-            <% if @member.twitter? %>
-            <li><%= link_to 'twitter', 'https://twitter.com/' + @member.twitter, target: '_new'  %></li>
-            <% end %>
-            <% if @member.instagram? %>
-            <li><%= link_to 'instagram', 'https://instagram.com/' + @member.instagram, target: '_new'  %></li>
-            <% end %>
-          </ul>
-
-          <% if @member == current_member %>
-          <p class = "card-text">
-             <%= link_to 'Edit Your Profile', edit_member_path(@member) %>
-          </p>
-          <% end %>
         </div>
       </div>
     </div>
-    <div class= "col-md-8">
-      <h3>Activities</h3>
-       <%= @member.activities %>
+    <div class= "col-md-6">
+       <h5>Conversations started by <%= @member.firstname %></h5>
+       <hr />
+       <% if @member.posts.empty? %>
+        <p>This person hasn't started any conversations yet.</p>
+       <% end %>
+       <% @member.posts.each do |post| %>
+       <div class="card conversation">
+         <div class="card-body">
+           <div class = "author">
+             <div class = "author-photo float-left">
+               <img class="rounded-circle" src="<%= post.member.avatar.url %>" alt="profile image" width="35" height="35">
+           </div>
+             <div class = "author-meta">
+               <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>
+               <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
+             </div>
+           </div>
+           <hr class="mb-4">
+           <h5 class="card-title"><%= link_to post.title, post %></h5>
+           <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
+           <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
+         </div>
+       </div>
+       <% end %>
+    </div>
+    <div class = "col-md-3">
+       <h5>More about <%= @member.firstname %></h5>
+       <hr />
+       <div class = "bio">
+         <% if @member.bio? %>
+          <%= @member.bio %>
+         <% else %>
+          No bio yet!
+         <% end %>
+       </div>
+       <% if @member.website_url? || @member.linkedin? || @member.facebook? || @member.twitter? || @member.instagram? %>
+       <hr />
+       <h6>Elsewhere on the web</h6>
 
-       <h3>Interests</h3>
-       <%= @member.interests %>
-
-       <h3>Bio</h3>
-       <%= @member.bio %>
+       <ul class = "social-links">
+         <% if @member.website_url? %>
+         <li><%= link_to @member.website_url, @member.website_url, target: '_new' %></li>
+         <% end %>
+         <% if @member.linkedin? %>
+         <li><%= link_to 'linkedin', 'https://linkedin.com/' + @member.linkedin, target: '_new'  %></li>
+         <% end %>
+         <% if @member.facebook? %>
+         <li><%= link_to 'facebook', 'https://facebook.com/' + @member.facebook, target: '_new'  %></li>
+         <% end %>
+         <% if @member.twitter? %>
+         <li><%= link_to 'twitter', 'https://twitter.com/' + @member.twitter, target: '_new'  %></li>
+         <% end %>
+         <% if @member.instagram? %>
+         <li><%= link_to 'instagram', 'https://instagram.com/' + @member.instagram, target: '_new'  %></li>
+         <% end %>
+       </ul>
+       <% end %>
     </div>
   </div>
 </div>
