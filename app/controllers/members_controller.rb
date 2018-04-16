@@ -9,13 +9,15 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @skills = Member.tag_counts_on(:skills)
-
-    if params[:skill].blank?
-      @members = Member.all.order('lastname DESC')
-    else
-      @skill = ActsAsTaggableOn::Tag.find_by_name(params[:skill])
-      @members = Member.tagged_with(@skill.name)
-    end
+    @members =
+      if search_query
+        Member.search_result(search_query)
+      elsif tag_filter
+        @skill = ActsAsTaggableOn::Tag.find_by_name(params[:skill])
+        @members = Member.tagged_with(@skill.name)
+      else
+        Member.all.order('lastname DESC')
+      end
   end
 
   # GET /members/1
@@ -88,5 +90,13 @@ class MembersController < ApplicationController
       :slack, :twitter, :username, :title,
       :website_name, :website_url, :work_pattern, :skill_list
     )
+  end
+
+  def search_query
+    params.permit(:query)[:query]
+  end
+
+  def tag_filter
+    params[:skill].present?
   end
 end

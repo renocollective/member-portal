@@ -38,9 +38,10 @@
    <% end %>
  </ul>
 
- <form class="form-inline my-2 my-lg-0" id="member-search">
-   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
- </form>
+ <%= form_tag(members_path, method: :get, class: 'form-inline my-2 my-lg-0', id: 'member-search') do %>
+  <%= search_field_tag "query", search_query, class: "form-control mr-sm-2", placeholder: "Member", 'aria-label' => "Search" %>
+  <%= submit_tag("Search", id: "button", class: "btn btn-outline-success my-2 my-sm-0", name: nil) %>
+ <% end %>
 </div>
 </nav>
 <br>
