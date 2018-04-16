@@ -11,10 +11,27 @@
   </div>
   <div class="row">
     <div class="col-sm-3">
-      <div class="card" id="profile">
+      <div class="card text-center member-profile">
         <div class="card-body">
-          <h5 class="card-title"><%= current_member.fullname %></h5>
-          <p class="card-text"></p>
+          <a href = "<%= member_path(current_member) %>">
+            <img class="rounded-circle" src="<%= current_member.avatar.url %>" alt="profile image" width="100" height="100">
+          </a>
+          <h5 class="card-title member-name"><%= link_to current_member.fullname, current_member %></h5>
+
+          <p class="card-text member-bio">
+             <% if current_member.title? && current_member.company %>
+            <%= current_member.title %> at <%= current_member.company %>
+             <% else %>
+             &nbsp;
+             <% end %>
+          </p>
+
+          <hr />
+          <div>
+            <% current_member.skill_list.each do |tag| %>
+              <a href="#" class="badge badge-skill"><%= tag %></a>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -34,7 +51,7 @@
             <hr class="mb-4">
             <h5 class="card-title"><%= link_to post.title, post %></h5>
             <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
-            <p class="card-text read-more"><%= link_to 'Read more &rarr;'.html_safe, post %></p>
+            <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
           </div>
         </div>
       <% end %>
@@ -46,7 +63,7 @@
     </div>
     <div class="col-sm-3">
       <% @announcements.each do |announcement| %>
-        <div class="alert alert-warning fade show" role="alert">
+        <div class="alert alert-warning fade show announcement" role="alert">
           <h5><%= announcement.title %></h5>
           <small>Posted <%= time_ago_in_words(announcement.created_at) %> ago</small>
           <p><%= announcement.content %></p>

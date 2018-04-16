@@ -77,8 +77,6 @@
           <%= form.text_field :company, class: "form-control", placeholder: "Reno Collective" %>
         </div>
 
-
-
         <div class="mb-3">
           <label for="email">Email</label>
           <%= form.text_field :email, class: "form-control", placeholder: "you@example.com" %>
@@ -89,90 +87,16 @@
           <%= form.text_field :website_url, class: "form-control", placeholder: "http://yourwebsite.com" %>
         </div>
 
-        <div class="mb-3">
-          <label for="interests">Interests</label>
-          <%= form.text_field :interests, class: "form-control", placeholder: "Running, programming, knitting" %>
-        </div>
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Your Bio</h4>
 
         <div class="mb-3">
-          <label for="activities">What do you do?</label>
-          <%= form.text_field :activities, class: "form-control", placeholder: "Programmer" %>
-        </div>
-
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="work-pattern">Work Pattern</label>
-            <select class="custom-select d-block w-100" id="workpattern">
-              <option value="">Choose...</option>
-              <option>Freelancer</option>
-              <option>Student</option>
-              <option>Remote Employee</option>
-              <option>Owner</option>
-              <option>Startup</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid work pattern.
-            </div>
-          </div>
+          <label for="website">Bio</label>
+          <%= form.text_area :bio, class: "form-control", placeholder: "Share more about yourself", rows: 6 %>
         </div>
 
         <hr class="mb-4">
-
-        <h4 class="mb-3">Social Profiles</h4>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Facebook</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
-              </div>
-              <%= form.text_field :facebook, class: "form-control" %>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">Twitter</label>
-            <div class="input-group mb-3">
-             <div class="input-group-prepend">
-               <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
-             </div>
-             <%= form.text_field :twitter, class: "form-control" %>
-           </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Instagram</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">https://instagram.com</span>
-              </div>
-              <%= form.text_field :instagram, class: "form-control" %>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">LinkedIn</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">https://linkedin.com/in/</span>
-              </div>
-              <%= form.text_field :linkedin, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Slack</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3">@</span>
-              </div>
-              <%= form.text_field :slack, class: "form-control" %>
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-
 
     </div>
     <div class="col-md-4">
@@ -183,10 +107,61 @@
 
        <%= form.text_area :skill_list, value: form.object.skill_list.to_s, class: 'skill-tags'  %>
 
-        <hr class="mb-4">
+       <hr class="mb-4">
 
-        <%= form.submit "Save", class: 'btn btn-primary btn-lg btn-block' %>
+       <h4 class="mb-3">Social Profiles</h4>
+
+       <div>
+         <label for="cc-name">Facebook</label>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
+           </div>
+           <%= form.text_field :facebook, class: "form-control" %>
+         </div>
+       </div>
+
+       <div>
+         <label for="cc-number">Twitter</label>
+         <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
+          </div>
+          <%= form.text_field :twitter, class: "form-control" %>
+        </div>
+       </div>
+
+       <div>
+         <label for="cc-name">Instagram</label>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon3">https://instagram.com</span>
+           </div>
+           <%= form.text_field :instagram, class: "form-control" %>
+         </div>
+       </div>
+
+       <div>
+         <label for="cc-number">LinkedIn</label>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon3">https://linkedin.com/in/</span>
+           </div>
+           <%= form.text_field :linkedin, class: "form-control" %>
+         </div>
+       </div>
+       
+       <div>
+         <label for="cc-name">Slack</label>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon3">@</span>
+           </div>
+           <%= form.text_field :slack, class: "form-control" %>
+         </div>
+       </div>
     </div>
   </div>
+  <%= form.submit "Save", class: 'btn btn-primary btn-lg btn-block' %> or   <%= link_to 'Cancel', members_path %>
   <% end %>
 </div>

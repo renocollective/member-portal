@@ -3,7 +3,7 @@
   .member-name {
     font-size: 17px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 1rem;
     margin-bottom: 5px;
   }
 
@@ -11,4 +11,30 @@
     font-size: 12px;
   }
 
+}
+
+.social-links {
+  list-style-type: none;
+  margin: 10px auto 0px auto;
+  padding: 0;
+  text-align: left;
+}
+
+.social-links li {
+  margin: 0;
+  padding: 0px 0px 2px 0px;
+}
+
+.social-links a {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #3097D1;
+}
+
+.social-links a:hover {
+  color: #282c34;
+}
+
+.bio {
+  font-size: 14px;
 }

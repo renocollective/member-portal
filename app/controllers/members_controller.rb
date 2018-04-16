@@ -11,12 +11,12 @@ class MembersController < ApplicationController
     @skills = Member.tag_counts_on(:skills)
     @members =
       if search_query
-        Member.search_result(search_query)
+        Member.search_result(search_query).order('lastname ASC')
       elsif tag_filter
         @skill = ActsAsTaggableOn::Tag.find_by_name(params[:skill])
-        @members = Member.tagged_with(@skill.name)
+        Member.tagged_with(@skill.name).order('lastname ASC')
       else
-        Member.all.order('lastname DESC')
+        Member.all.order('lastname ASC')
       end
   end
 

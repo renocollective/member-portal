@@ -24,7 +24,7 @@
           <hr class="mb-4">
           <h5 class="card-title"><%= link_to post.title, post %></h5>
           <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
-          <p class="card-text read-more"><%= link_to 'Read more &rarr;'.html_safe, post %></p>
+          <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
         </div>
       </div>
       <% end %>
