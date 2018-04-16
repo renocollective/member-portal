@@ -394,7 +394,7 @@ DEPENDENCIES
   listen (~> 3.1.5)
   mini_magick (~> 4.8.0)
   pg (~> 1.0.0)
-  puma (~> 3.11.3)
+  puma (~> 3.11.4)
   rails (~> 5.1.6)
   rspec-rails (~> 3.7)
   rubocop (~> 0.54.0)
