@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :posts, param: :slug, path: :conversations do
-    resources :comments
+    resources :comments, shallow: true
     root to: 'posts#index'
   end
 

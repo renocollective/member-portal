@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :comment do
     content 'MyText'
-    post
     member
+    post
   end
 end

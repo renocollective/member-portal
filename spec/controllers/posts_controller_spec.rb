@@ -32,6 +32,16 @@ RSpec.describe PostsController, type: :controller do
     end.to change { Post.count }.by(1)
   end
 
+  it 'should not create post' do
+    params = {
+      post: {
+      }
+    }
+    expect do
+      post :create, params: params
+    end.to change { Post.count }.by(0)
+  end
+
   it 'should show post' do
     get :show, params: { slug: post1.slug }
     expect(response).to have_http_status(200)

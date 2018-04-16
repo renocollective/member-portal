@@ -26,13 +26,25 @@ RSpec.describe AnnouncementsController, type: :controller do
     end.to change { Announcement.count }.by(1)
   end
 
+  it 'should not create announcement' do
+    authenticate_member(admin)
+    params = {
+      announcement: {
+        content: 'announcement content'
+      }
+    }
+    expect do
+      post :create, params: params
+    end.to change { Announcement.count }.by(0)
+  end
+
   it 'should get edit' do
     get :edit, params: { id: announcement1.id }
     expect(response).to have_http_status(200)
   end
 
   it 'should update post' do
-    patch :update, params: { id: announcement1.id, post: {} }
+    patch :update, params: { id: announcement1.id, announcement: {} }
   end
 
   it 'should destroy announcement' do
