@@ -25,6 +25,14 @@
           </div>
         </div>
       </div>
+      <div class = "text-center">
+        <% if @member == current_member %>
+          <small>
+            <%= link_to 'Edit Your Profile', edit_member_path(@member) %>
+          </small>
+        <% end %>
+      </div>
+
     </div>
     <div class= "col-md-6">
        <h5>Conversations started by <%= @member.firstname %></h5>
