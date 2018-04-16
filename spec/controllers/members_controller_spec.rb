@@ -34,6 +34,16 @@ RSpec.describe MembersController, type: :controller do
     expect(Member.count).to eq(before_count + 1)
   end
 
+  it 'should not create a member' do
+    params = {
+      member: {
+      }
+    }
+    expect do
+      post :create, params: params
+    end.to change { Member.count }.by(0)
+  end
+
   it 'should get edit a member' do
     get :edit, params: { username: member.username }
     expect(response).to have_http_status(200)

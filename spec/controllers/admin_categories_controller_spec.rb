@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Admin::CategoriesController, type: :controller do
   let(:admin) { create(:admin) }
+  let(:category1) { create(:category) }
 
   it 'should show categories admin dashboard if logged in as admin' do
     authenticate_member(admin)

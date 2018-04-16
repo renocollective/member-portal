@@ -8,4 +8,10 @@ RSpec.describe Admin::MembersController, type: :controller do
     get :index
     expect(response.status).to eq(200)
   end
+
+  it 'should show member from admin dashboard' do
+    authenticate_member(admin)
+    get :show, params: { username: admin.username }
+    expect(response.status).to eq(200)
+  end
 end

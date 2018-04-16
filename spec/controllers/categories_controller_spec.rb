@@ -20,6 +20,16 @@ RSpec.describe CategoriesController, type: :controller do
     end.to change { Category.count }.by(1)
   end
 
+  it 'should not create category' do
+    params = {
+      category: {
+      }
+    }
+    expect do
+      post :create, params: params
+    end.to change { Category.count }.by(0)
+  end
+
   it 'should get new' do
     get :new
     expect(response).to have_http_status(200)
