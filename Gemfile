@@ -5,7 +5,7 @@ ruby '2.3.5'
 
 gem 'acts-as-taggable-on', '~> 5.0.0'
 gem 'administrate', '~> 0.9.0'
-gem 'algoliasearch-rails', '~> 1.19.0'
+gem 'algoliasearch-rails', '~> 1.20.4'
 gem 'bootstrap', '~> 4.0.0'
 gem 'carrierwave', '~> 1.2.2'
 gem 'coffee-rails', '~> 4.2.0'
