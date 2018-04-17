@@ -7,6 +7,7 @@ For development, we are using a local SMTP server called [Mailcatcher](https://g
 You will need to install Mailcatcher and run it. The settings for using the local SMTP server are already setup in `/config/environments/development.rb`.
 
 > gem install mailcatcher
+
 > mailcatcher
 
 
