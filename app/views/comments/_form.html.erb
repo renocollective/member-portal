@@ -1,8 +1,10 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="form-group">
-    <%= f.text_area :content, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.submit 'Post comment', class: 'btn btn-primary' %>
+  <div class="comment">
+    <div class="form-group">
+      <%= f.text_area :content, class: 'form-control', placeholder:"Write a nice reply or go home..." %>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Post comment', class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
