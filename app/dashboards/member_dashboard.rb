@@ -41,7 +41,6 @@ class MemberDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    invited_by
     id
     username
     firstname
@@ -50,8 +49,7 @@ class MemberDashboard < Administrate::BaseDashboard
     sign_in_count
     last_sign_in_at
     company
-    location
-    phone
+    invited_by
     admin
   ].freeze
 

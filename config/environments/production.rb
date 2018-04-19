@@ -63,7 +63,9 @@ Rails.application.configure do
   # environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "member-portal_#{Rails.env}"
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = {
+    host: 'https://community.renocollective.com'
+  }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: ENV.fetch('SMTP_ADDRESS'),
