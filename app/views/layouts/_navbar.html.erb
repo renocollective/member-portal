@@ -1,4 +1,4 @@
-<nav id="main-nav" class="navbar navbar-expand-lg">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark">
 
 <%= link_to image_tag("rc_atom.png", border: 0), root_path, class: 'brand-logo' %>
 
@@ -27,19 +27,19 @@
        <%= current_member.username %>
      </a>
      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-       <%= link_to 'Your Profile', member_path(current_member), class: 'nav-link' %>
+       <%= link_to 'Your Profile', member_path(current_member), class: 'dropdown-item' %>
        <% if current_member.admin? %>
-       <%= link_to 'Admin Dashboard', admin_root_path, class: 'nav-link' %>
+       <%= link_to 'Admin Dashboard', admin_root_path, class: 'dropdown-item' %>
        <% end %>
        <div class="dropdown-divider"></div>
-       <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'nav-link' %>
+       <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'dropdown-item' %>
      </div>
    </li>
    <% end %>
  </ul>
 
  <%= form_tag(members_path, method: :get, class: 'form-inline my-2 my-lg-0', id: 'member-search') do %>
-  <%= search_field_tag "query", search_query, class: "form-control mr-sm-2", placeholder: "Member", 'aria-label' => "Search" %>
+  <%= search_field_tag "query", search_query, id: "wrapper_small", class: "form-control mr-sm-2", placeholder: "Member", 'aria-label' => "Search" %>
   <%= submit_tag("Search", id: "button", class: "btn btn-outline-success my-2 my-sm-0", name: nil) %>
  <% end %>
 </div>
