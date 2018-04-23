@@ -17,21 +17,23 @@ Rails.application.routes.draw do
     root to: 'posts#index'
   end
 
-  devise_for :members, controllers: {
+  devise_for :members, skip: [:registrations], controllers: {
     invitations: 'invitations'
   }
 
-  resources :members, param: :username
-  root to: 'home#index'
+  authenticate :member do
+    resources :members, param: :username
+    root to: 'home#index'
 
-  resources :posts, param: :slug, path: :conversations do
-    resources :comments
-    root to: 'posts#index'
+    resources :posts, param: :slug, path: :conversations do
+      resources :comments
+      root to: 'posts#index'
+    end
+
+    resources :announcements
+    root to: 'announcements#index'
+
+    resources :categories
+    root to: 'categories#index'
   end
-
-  resources :announcements
-  root to: 'announcements#index'
-
-  resources :categories
-  root to: 'categories#index'
 end
