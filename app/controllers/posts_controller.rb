@@ -5,12 +5,15 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
-    if params[:category].blank?
-      @posts = Post.all.order('created_at DESC')
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @posts = Post.where(category_id: @category_id).order('created_at DESC')
-    end
+    @posts =
+      if category_filter
+        Post.where(category_id: post_category)
+            .order('created_at DESC')
+            .page post_page
+      else
+        Post.order('created_at DESC')
+            .page post_page
+      end
   end
 
   def show
@@ -64,7 +67,19 @@ class PostsController < ApplicationController
     )
   end
 
+  def category_filter
+    params.permit(:category)[:category]
+  end
+
   def find_post
     @post = Post.find_by_slug(params[:slug])
+  end
+
+  def post_page
+    params[:page] || 1
+  end
+
+  def post_category
+    Category.find_by(name: params[:category]).id
   end
 end
