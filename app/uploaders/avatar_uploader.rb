@@ -8,7 +8,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [50, 50]
   end
 
-  storage :file
+  if Rails.configuration.use_s3
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

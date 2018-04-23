@@ -56,5 +56,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.algolia_search = false
+  config.use_s3 = false
 end
 # rubocop:enable Metrics/BlockLength
