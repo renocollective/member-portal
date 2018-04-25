@@ -23,7 +23,7 @@
    <% if member_signed_in? %>
    <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       <img class="rounded-circle" src="<%= current_member.avatar.url %>" width="25" height="25">
+       <img class="rounded-circle" src="<%= current_member.avatar.profile.url %>" width="25" height="25">
        <%= current_member.username %>
      </a>
      <div class="dropdown-menu" aria-labelledby="navbarDropdown">

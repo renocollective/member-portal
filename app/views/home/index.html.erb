@@ -4,7 +4,7 @@
       <div class="card text-center member-profile">
         <div class="card-body">
           <a href = "<%= member_path(current_member) %>">
-            <img class="rounded-circle" src="<%= current_member.avatar.url %>" alt="profile image" width="100" height="100">
+            <img class="rounded-circle" src="<%= current_member.avatar.profile.url %>" alt="profile image" width="100" height="100">
           </a>
           <h5 class="card-title member-name"><%= link_to current_member.fullname, current_member %></h5>
 
@@ -42,7 +42,7 @@
           <div class="card-body">
             <div class = "author">
               <div class = "author-photo float-left">
-                <img class="rounded-circle" src="<%= post.member.avatar.url %>" alt="profile image" width="35" height="35">
+                <img class="rounded-circle" src="<%= post.member.avatar.profile.url %>" alt="profile image" width="35" height="35">
             </div>
               <div class = "author-meta">
                 <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>

@@ -8,6 +8,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [50, 50]
   end
 
+  version :profile do
+    process resize_to_fill: [400, 400]
+  end
+
   if Rails.configuration.use_s3
     storage :fog
   else
