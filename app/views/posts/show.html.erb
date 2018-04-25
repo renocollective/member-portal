@@ -26,7 +26,7 @@
       <%= image_tag @post.image_url.to_s %>
       <p><%= simple_format(@post.content).gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %></p>
 
-      <hr class="mb-4">
+      <hr class="posthr">
 
       <%= render 'comments/comment' %>
     </div>
