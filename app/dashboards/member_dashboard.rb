@@ -62,8 +62,6 @@ class MemberDashboard < Administrate::BaseDashboard
     lastname
     email
     company
-    location
-    phone
     admin
   ].freeze
 
