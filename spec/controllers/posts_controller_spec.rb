@@ -14,6 +14,34 @@ RSpec.describe PostsController, type: :controller do
     expect(response).to have_http_status(200)
   end
 
+  describe 'posts aka conversations with pagination' do
+    context 'when specifying last page' do
+      it 'should return short page of results' do
+        create_list(:post, 4)
+        get :index, params: { page: 2, per_page: 3 }
+        expect(assigns(:posts).length).to be < 3
+        expect(response).to have_http_status(200)
+      end
+    end
+    context 'without specifying page' do
+      it 'should return one page of results' do
+        create_list(:post, 16)
+        get :index
+        expect(assigns(:posts).length).to eq(10)
+        expect(response).to have_http_status(200)
+      end
+    end
+    context 'with category filter' do
+      it 'should return posts for category' do
+        food_category = create(:category, name: 'Food')
+        create(:post, category_id: food_category.id)
+        get :index, params: { category: 'Food' }
+        expect(assigns(:posts).length).to eq(1)
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
+
   it 'should get new' do
     get :new
     expect(response).to have_http_status(200)
