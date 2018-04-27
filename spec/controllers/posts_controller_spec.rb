@@ -31,6 +31,14 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to have_http_status(200)
       end
     end
+    context 'when specifying page out of range' do
+      it 'should return no results' do
+        create_list(:post, 2)
+        get :index, params: { page: 4 }
+        expect(assigns(:posts).length).to eq(0)
+        expect(response).to have_http_status(200)
+      end
+    end
     context 'with category filter' do
       it 'should return posts for category' do
         food_category = create(:category, name: 'Food')
