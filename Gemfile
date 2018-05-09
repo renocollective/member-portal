@@ -43,6 +43,6 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.55.0', require: false
-  gem 'selenium-webdriver', '~> 3.11.0'
+  gem 'selenium-webdriver', '~> 3.12.0'
   gem 'simplecov', '~> 0.16.1', require: false
 end
