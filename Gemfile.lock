@@ -206,7 +206,7 @@ GEM
     kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    license_finder (5.1.0)
+    license_finder (5.1.1)
       bundler
       httparty
       rubyzip
@@ -422,7 +422,7 @@ DEPENDENCIES
   jbuilder (~> 2.7.0)
   jquery-rails (~> 4.3.3)
   kaminari (~> 1.1.1)
-  license_finder (~> 5.1.0)
+  license_finder (~> 5.1.1)
   listen (~> 3.1.5)
   mini_magick (~> 4.8.0)
   pg (~> 1.0.0)
