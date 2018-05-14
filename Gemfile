@@ -39,7 +39,7 @@ group :development, :test do
   gem 'faker', '~> 1.8.7'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
-  gem 'license_finder', '~> 5.1.0'
+  gem 'license_finder', '~> 5.2.0'
   gem 'rails-controller-testing', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.55.0', require: false
