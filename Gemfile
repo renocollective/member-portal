@@ -3,7 +3,9 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
-gem 'acts-as-taggable-on', '~> 5.0.0'
+gem 'acts-as-taggable-on',
+    git: 'https://github.com/Fodoj/acts-as-taggable-on.git',
+    branch: 'rails-5.2'
 gem 'administrate', '~> 0.10.0'
 gem 'algoliasearch-rails', '~> 1.20.4'
 gem 'bootstrap', '~> 4.1.1'
