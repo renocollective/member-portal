@@ -25,7 +25,7 @@ gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0.7'
 gem 'selectize-rails', '~> 0.12.4.1'
 gem 'turbolinks', '~> 5.1.1'
-gem 'uglifier', '~> 4.1.10'
+gem 'uglifier', '~> 4.1.11'
 
 group :development do
   gem 'listen', '~> 3.1.5'
