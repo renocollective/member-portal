@@ -37,28 +37,7 @@
     <div class= "col-md-6">
        <h5>Conversations started by <%= @member.firstname %></h5>
        <hr />
-       <% if @member.posts.empty? %>
-        <p>This person hasn't started any conversations yet.</p>
-       <% end %>
-       <% @member.posts.each do |post| %>
-       <div class="card conversation">
-         <div class="card-body">
-           <div class = "author">
-             <div class = "author-photo float-left">
-               <img class="rounded-circle" src="<%= post.member.avatar.profile.url %>" alt="profile image" width="35" height="35">
-           </div>
-             <div class = "author-meta">
-               <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>
-               <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
-             </div>
-           </div>
-           <hr class="mb-4">
-           <h5 class="card-title"><%= link_to post.title, post %></h5>
-           <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
-           <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
-         </div>
-       </div>
-       <% end %>
+       Pull in posts from Discourse
     </div>
     <div class = "col-md-3">
        <h5>More about <%= @member.firstname %></h5>

@@ -22,7 +22,9 @@ class MembersController < ApplicationController
 
   # GET /members/1
   # GET /members/1.json
-  def show() end
+  def show()
+    puts "show member"
+  end
 
   # GET /members/new
   def new

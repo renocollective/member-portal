@@ -27,40 +27,10 @@
     </div>
     <div class="col-sm-3 order-sm-12">
       <h5 class = "section-title">Announcements</h5>
-      <% @announcements.each do |announcement| %>
-        <div class="alert alert-warning fade show announcement" role="alert">
-          <h5><%= announcement.title %></h5>
-          <small>Posted <%= time_ago_in_words(announcement.created_at) %> ago</small>
-          <p><%= announcement.content %></p>
-        </div>
-      <% end %>
+
     </div>
     <div class="col-sm-6 order-sm-1">
       <h5 class="section-title">Recent Conversations</h5>
-      <% @conversations.each do |post| %>
-        <div class="card conversation">
-          <div class="card-body">
-            <div class = "author">
-              <div class = "author-photo float-left">
-                <img class="rounded-circle" src="<%= post.member.avatar.profile.url %>" alt="profile image" width="35" height="35">
-            </div>
-              <div class = "author-meta">
-                <h6 class = "name"><%= link_to post.member.fullname, post.member %></h6>
-                <h6><%= time_ago_in_words(post.created_at) %> ago</h6>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <h5 class="card-title"><%= link_to post.title, post %></h5>
-            <p class="card-text"><%= sanitize(truncate(post.content, length: 150)) %></p>
-            <p class="card-text read-more"><%= link_to "#{post.comments.count} Comments | Read more &rarr;".html_safe, post %></p>
-          </div>
-        </div>
-      <% end %>
-      <% if @conversations.count >= 1 %>
-      <div class = "read-more">
-        <%= link_to 'View older conversations &rarr;'.html_safe, posts_path %>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>
