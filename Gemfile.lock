@@ -178,8 +178,6 @@ GEM
       guard (~> 2.0)
       rubocop (~> 0.20)
     highline (1.7.10)
-    httparty (0.16.2)
-      multi_xml (>= 0.5.2)
     httpclient (2.8.3)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
@@ -206,9 +204,8 @@ GEM
     kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-    license_finder (5.1.1)
+    license_finder (5.4.1)
       bundler
-      httparty
       rubyzip
       thor
       toml (= 0.2.0)
@@ -238,7 +235,6 @@ GEM
     momentjs-rails (2.20.1)
       railties (>= 3.1)
     multi_json (1.13.1)
-    multi_xml (0.6.0)
     multipart-post (2.0.0)
     nenv (0.3.0)
     net-http-persistent (2.9.4)
@@ -422,7 +418,7 @@ DEPENDENCIES
   jbuilder (~> 2.7.0)
   jquery-rails (~> 4.3.3)
   kaminari (~> 1.1.1)
-  license_finder (~> 5.1.0)
+  license_finder (~> 5.4.1)
   listen (~> 3.1.5)
   mini_magick (~> 4.8.0)
   pg (~> 1.0.0)
