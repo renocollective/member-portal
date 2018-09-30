@@ -438,7 +438,7 @@ DEPENDENCIES
   travis (~> 1.8.8)
   turbolinks (~> 5.1.1)
   uglifier (~> 4.1.10)
-  web-console (~> 3.6.1)
+  web-console (~> 3.6.2)
 
 RUBY VERSION
    ruby 2.3.5p376
