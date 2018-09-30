@@ -35,7 +35,7 @@ group :development, :test do
   gem 'bundler-audit', '~> 0.6.0'
   gem 'byebug', '~> 10.0.2', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 3.0'
-  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'factory_bot_rails', '~> 4.11.1'
   gem 'faker', '~> 1.8.7'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
