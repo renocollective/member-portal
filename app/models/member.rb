@@ -33,6 +33,7 @@ class Member < ApplicationRecord
   def self.search_result(query)
     term = "%#{sanitize_sql_like(query)}%"
     return algolia_search_results(term) if Rails.configuration.algolia_search
+
     basic_search_results(term)
   end
 

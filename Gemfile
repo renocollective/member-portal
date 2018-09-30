@@ -35,14 +35,14 @@ group :development, :test do
   gem 'bundler-audit', '~> 0.6.0'
   gem 'byebug', '~> 10.0.2', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 3.0'
-  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'factory_bot_rails', '~> 4.11.1'
   gem 'faker', '~> 1.8.7'
   gem 'guard-minitest', '~> 2.4.6'
   gem 'guard-rubocop', '~> 1.3.0'
   gem 'license_finder', '~> 5.4.1'
   gem 'rails-controller-testing', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.7'
-  gem 'rubocop', '~> 0.55.0', require: false
-  gem 'selenium-webdriver', '~> 3.12.0'
+  gem 'rubocop', '~> 0.59.2', require: false
+  gem 'selenium-webdriver', '~> 3.14.0'
   gem 'simplecov', '~> 0.16.1', require: false
 end
