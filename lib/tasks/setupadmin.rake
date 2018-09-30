@@ -25,11 +25,6 @@ task setupadmin: [:environment] do
       admin: true
     )
 
-    # Create initial category
-    Category.create(
-      name: 'Uncategorized'
-    )
-
     puts 'Your admin user has been created. You can sign in with this account.'
   else
     puts 'Users have already been created for this Member Portal.'
