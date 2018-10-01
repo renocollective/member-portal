@@ -257,7 +257,7 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    puma (3.11.4)
+    puma (3.12.0)
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
@@ -424,7 +424,7 @@ DEPENDENCIES
   listen (~> 3.1.5)
   mini_magick (~> 4.8.0)
   pg (~> 1.0.0)
-  puma (~> 3.11.3)
+  puma (~> 3.12.0)
   rails (~> 5.2.1)
   rails-controller-testing (~> 1.0.2)
   rspec-rails (~> 3.7)
